@@ -5,282 +5,188 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>bon délice - байршилд суурилсан ресторан, кафе, паб хайлт ба ширээ захиалга</title>
+    <title>bon délice - discover restaurants</title>
 
-    <!-- seo (xhtml strict-д зөвшөөрөгдөнө: meta name/content) -->
-    <meta name="description" content="bon délice нь хэрэглэгчийн байршилд тулгуурлан ойролцоох ресторан, кафе, пабуудыг хайж олох, меню үзэх, үнэлгээ унших, сэтгэгдэл бичих, ширээ захиалах веб апп юм." />
-    <meta name="keywords" content="ресторан, кафе, паб, ойрхон, хайлт, шүүлт, меню, үнэлгээ, сэтгэгдэл, ширээ захиалга" />
+    <!-- seo -->
+    <meta name="description" content="bon délice веб аппликейшн: хэрэглэгчийн байршилд тулгуурлан ойролцоох ресторан, кафе, паб хайх, хайлт хийх, шүүлт хийх, газрын зураг дээр байршлыг харах ерөнхий бүтэц." />
+    <meta name="keywords" content="bon délice, ресторан, кафе, паб, хайлт, шүүлт, байршил, газрын зураг, захиалга" />
     <meta name="robots" content="index, follow" />
-
-    <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
 
   <body>
     <div id="top"></div>
 
-    <!-- accessibility: skip link (aria/role ашиглахгүйгээр) -->
-    <p class="skip-link">
+    <p>
       <a href="#main">үндсэн агуулга руу алгасах</a>
     </p>
 
-    <div class="page">
+    <!-- header -->
+    <div>
+      <p class="logo">
+        <img src="assets/img/logo.png" alt="bon délice лого" />
+      </p>
+      <p>байршилд суурилсан ресторан, кафе, паб хайлт ба ширээ захиалга</p>
 
-      <!-- header -->
-      <div class="site-header">
-        <div class="brand">
-          <p class="logo">
-            <img src="assets/img/logo.png" alt="bon délice лого" />
-          </p>
-          <h1>bon délice</h1>
-          <p class="tagline">байршилд суурилсан ресторан, кафе, паб хайлт ба ширээ захиалга</p>
-        </div>
+      <!-- navigation -->
+      <div>
+        <h2>цэс</h2>
+        <ul>
+          <li><a href="#search">хайлт</a></li>
+          <li><a href="#filters">шүүлт</a></li>
+          <li><a href="#results">жагсаалт</a></li>
+          <li><a href="#map">газрын зураг</a></li>
+        </ul>
+      </div>
+    </div>
 
-        <!-- navigation -->
-        <div class="site-nav">
-          <h2 class="visually-hidden">үндсэн цэс</h2>
-          <ul>
-            <li><a href="#home">нүүр</a></li>
-            <li><a href="#listing">жагсаалт</a></li>
-            <li><a href="#detail">дэлгэрэнгүй</a></li>
-            <li><a href="#reservation">захиалга</a></li>
-            <li><a href="#account">хэрэглэгч</a></li>
-            <li><a href="#admin">админ</a></li>
-            <li><a href="#media">медиа</a></li>
-          </ul>
-        </div>
+    <!-- main -->
+    <div id="main">
+      <div>
+        <h2>discover restaurants</h2>
+        <p>
+          энэ хуудас нь “bon délice” төслийн discovery болон browsing хэсгийн ерөнхий бүтэц юм.
+          хэрэглэгч ойролцоох ресторан/кафе/пабуудыг хайж, шүүж, жагсаалтаар харах боломжтой.
+        </p>
       </div>
 
-      <!-- main content -->
-      <div id="main" class="main">
+      <!-- search -->
+      <div id="search">
+        <h2>хайлт</h2>
 
-        <!-- home -->
-        <div id="home" class="section">
-          <h2>төслийн ерөнхий танилцуулга</h2>
+        <form action="#" method="get">
+          <fieldset>
+            <legend>ойролцоох газар хайх</legend>
+
+            <p>
+              <label for="q">хайх үг (жишээ: кофе, солонгос, паб):</label><br />
+              <input type="text" id="q" name="q" value="" />
+            </p>
+
+            <p>
+              <label for="location">байршил (жишээ):</label><br />
+              <input type="text" id="location" name="location" value="улаанбаатар" />
+            </p>
+
+            <p>
+              <input type="submit" value="хайх" />
+              <input type="reset" value="цэвэрлэх" />
+            </p>
+          </fieldset>
+        </form>
+      </div>
+
+      <!-- filters -->
+      <div id="filters">
+        <h2>шүүлт (filter options)</h2>
+
+        <form action="#" method="get">
+          <fieldset>
+            <legend>шүүлт хийх</legend>
+
+            <p>
+              <label for="category">төрөл:</label><br />
+              <select id="category" name="category">
+                <option value="all">бүгд</option>
+                <option value="restaurant">ресторан</option>
+                <option value="cafe">кафе</option>
+                <option value="pub">паб</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="radius">зай (км):</label><br />
+              <select id="radius" name="radius">
+                <option value="1">1</option>
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="rating">үнэлгээ:</label><br />
+              <select id="rating" name="rating">
+                <option value="any">ялгаагүй</option>
+                <option value="4plus">4+</option>
+                <option value="3plus">3+</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="open">одоогоор нээлттэй эсэх:</label><br />
+              <select id="open" name="open">
+                <option value="any">ялгаагүй</option>
+                <option value="open">нээлттэй</option>
+                <option value="closed">хаалттай</option>
+              </select>
+            </p>
+
+            <p>
+              <input type="submit" value="шүүлт хэрэглэх" />
+            </p>
+          </fieldset>
+        </form>
+      </div>
+
+      <!-- results -->
+      <div id="results">
+        <h2>жагсаалт (restaurant listing)</h2>
+        <p>доорх нь бодит screenshot ашигласан жишээ жагсаалт.</p>
+
+        <div>
+          <h3>yuna</h3>
+          <p>төрөл: солонгос ресторан, ази ресторан</p>
+          <p>үнэлгээ: 4.3</p>
+          <p>зай: 0.6 км</p>
           <p>
-            bon délice нь хэрэглэгчийн одоогийн байршилд үндэслэн ойролцоох ресторан, кафе, паб зэрэг газруудыг
-            харуулах, дэлгэрэнгүй мэдээлэл (меню, үнэлгээ, сэтгэгдэл, байршил) үзүүлэх мөн онлайнаар
-            ширээ захиалах боломжтой веб аппликейшн юм.
+            үйлдэл:
+            <a href="#map">байршлыг харах</a>
+            |
+            <a href="#note">reserve (дараагийн хуудсанд)</a>
           </p>
+          <p>
+            <img src="assets/img/yuna-detail.png" alt="yuna рестораны дэлгэрэнгүй хуудасны screenshot" />
+          </p>
+          <p>зураг 1. yuna рестораны дэлгэрэнгүй мэдээллийн интерфейс</p>
         </div>
 
-        <!-- listing / discover -->
-        <div id="listing" class="section">
-          <h2>discover restaurants (жагсаалт, хайлт, шүүлт)</h2>
+        <div>
+          <h3>coffee namu mongolia</h3>
+          <p>төрөл: кафе</p>
+          <p>үнэлгээ: 4.8</p>
+          <p>зай: 0.6 км</p>
           <p>
-            энэ хэсэг нь ресторануудын жагсаалт, хайлт болон filter options-ийг нэг дороос харуулах ерөнхий бүтэц.
-            хэрэглэгч cuisine, price, rating зэрэг үзүүлэлтээр шүүж болно.
+            үйлдэл:
+            <a href="#map">байршлыг харах</a>
+            |
+            <a href="#note">reserve (дараагийн хуудсанд)</a>
           </p>
-
-          <div class="wireframe">
-            <img src="assets/img/wire-listing.png" alt="discover restaurants: хайлт, шүүлт, ресторан жагсаалтын wireframe зураг" />
-            <p class="caption">зураг 1. жагсаалт + хайлт + шүүлтийн wireframe (discover restaurants)</p>
-          </div>
-        </div>
-
-        <!-- detail -->
-        <div id="detail" class="section">
-          <h2>restaurant detail (overview, menu, reserve, reviews)</h2>
           <p>
-            хэрэглэгч сонгосон газрын дэлгэрэнгүй мэдээллийг үзэж (overview),
-            меню үзэх (menu), ширээ захиалах (reserve), үнэлгээ ба сэтгэгдэл (reviews) хэсгүүдээр шилжинэ.
+            <img src="assets/img/coffee-detail.png" alt="coffee namu mongolia кафены дэлгэрэнгүй хуудасны screenshot" />
           </p>
-
-          <div class="wireframe">
-            <img src="assets/img/wire-detail-reserve.png" alt="restaurant detail: overview, menu, reserve, reviews tab бүхий wireframe зураг" />
-            <p class="caption">зураг 2. дэлгэрэнгүй хуудас ба захиалгын табтай wireframe</p>
-          </div>
-
-          <h3>сэтгэгдэл бичих (жишээ бүтэц)</h3>
-          <form action="#" method="post">
-            <fieldset>
-              <legend>үнэлгээ ба сэтгэгдэл</legend>
-
-              <p>
-                <label for="rating">үнэлгээ (1-5):</label><br />
-                <select id="rating" name="rating">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </p>
-
-              <p>
-                <label for="comment">сэтгэгдэл:</label><br />
-                <textarea id="comment" name="comment" rows="4" cols="40"></textarea>
-              </p>
-
-              <p>
-                <input type="submit" value="илгээх" />
-              </p>
-            </fieldset>
-          </form>
-        </div>
-
-        <!-- reservation flow -->
-        <div id="reservation" class="section">
-          <h2>reservation flow (захиалга)</h2>
-          <p>
-            хэрэглэгч огноо, цаг, хүний тоог сонгон захиалгаа баталгаажуулна.
-            доорх зураг нь захиалга баталгаажуулах дэлгэцийн жишээ юм.
-          </p>
-
-          <div class="wireframe">
-            <img src="assets/img/wire-reservation-details.png" alt="reservation details: захиалга баталгаажуулах wireframe зураг" />
-            <p class="caption">зураг 3. захиалга баталгаажуулах (reservation details)</p>
-          </div>
-
-          <h3>reservation form (ерөнхий бүтэц)</h3>
-          <form action="#" method="post">
-            <fieldset>
-              <legend>ширээ захиалгын форм</legend>
-
-              <p>
-                <label for="rdate">огноо:</label><br />
-                <input type="text" id="rdate" name="rdate" value="" />
-              </p>
-
-              <p>
-                <label for="rtime">цаг:</label><br />
-                <input type="text" id="rtime" name="rtime" value="" />
-              </p>
-
-              <p>
-                <label for="party">хүний тоо:</label><br />
-                <input type="text" id="party" name="party" value="" />
-              </p>
-
-              <p>
-                <label for="fullname">нэр:</label><br />
-                <input type="text" id="fullname" name="fullname" value="" />
-              </p>
-
-              <p>
-                <label for="phone">утас:</label><br />
-                <input type="text" id="phone" name="phone" value="" />
-              </p>
-
-              <p>
-                <label for="note">тайлбар (сонголтоор):</label><br />
-                <textarea id="note" name="note" rows="3" cols="40"></textarea>
-              </p>
-
-              <p>
-                <input type="submit" value="захиалга баталгаажуулах" />
-              </p>
-            </fieldset>
-          </form>
-        </div>
-
-        <!-- user account -->
-        <div id="account" class="section">
-          <h2>user account (my reservations, login/register)</h2>
-          <p>
-            хэрэглэгч өөрийн захиалгын түүхийг харах боломжтой. мөн системд нэвтрэх болон бүртгүүлэх хэсэг төлөвлөгдөнө.
-          </p>
-
-          <div class="wireframe">
-            <img src="assets/img/wire-my-reservations.png" alt="my reservations: хэрэглэгчийн захиалгын жагсаалтын wireframe зураг" />
-            <p class="caption">зураг 4. хэрэглэгчийн захиалгын түүх (my reservations)</p>
-          </div>
-
-          <h3>login (ерөнхий бүтэц)</h3>
-          <form action="#" method="post">
-            <fieldset>
-              <legend>нэвтрэх</legend>
-
-              <p>
-                <label for="email">имэйл:</label><br />
-                <input type="text" id="email" name="email" value="" />
-              </p>
-
-              <p>
-                <label for="password">нууц үг:</label><br />
-                <input type="password" id="password" name="password" value="" />
-              </p>
-
-              <p>
-                <input type="submit" value="нэвтрэх" />
-              </p>
-            </fieldset>
-          </form>
-
-          <h3>register (ерөнхий бүтэц)</h3>
-          <form action="#" method="post">
-            <fieldset>
-              <legend>бүртгүүлэх</legend>
-
-              <p>
-                <label for="rname">нэр:</label><br />
-                <input type="text" id="rname" name="rname" value="" />
-              </p>
-
-              <p>
-                <label for="remail">имэйл:</label><br />
-                <input type="text" id="remail" name="remail" value="" />
-              </p>
-
-              <p>
-                <label for="rpass">нууц үг:</label><br />
-                <input type="password" id="rpass" name="rpass" value="" />
-              </p>
-
-              <p>
-                <input type="submit" value="бүртгүүлэх" />
-              </p>
-            </fieldset>
-          </form>
-        </div>
-
-        <!-- admin -->
-        <div id="admin" class="section">
-          <h2>admin/owner dashboard (conceptual)</h2>
-          <p>
-            админ хэсэг нь мэдээлэл удирдах зориулалттай (crud). энэ лабораторийн хүрээнд ерөнхий бүтэц болон
-            хуудасны харилцан хамаарлыг үзүүлэв.
-          </p>
-
-          <div class="wireframe">
-            <img src="assets/img/wire-owner-dashboard.png" alt="owner dashboard: өнөөдрийн захиалга, статистик, мэдэгдэл бүхий wireframe зураг" />
-            <p class="caption">зураг 5. owner dashboard (админ хэсгийн жишээ)</p>
-          </div>
-
-          <ul>
-            <li>manage restaurants (create/read/update/delete)</li>
-            <li>manage menus (create/read/update/delete)</li>
-            <li>manage reservations (confirm/cancel)</li>
-            <li>manage reviews and ratings</li>
-            <li>manage users</li>
-          </ul>
-        </div>
-
-        <!-- media (xhtml strict-д object ашиглана) -->
-        <div id="media" class="section">
-          <h2>медиа (аудио, бичлэг)</h2>
-
-          <h3>аудио танилцуулга</h3>
-          <object data="assets/audio/intro.mp3" type="audio/mpeg" width="320" height="40">
-            <p>таны браузер аудио тоглуулахыг дэмжихгүй байна.</p>
-          </object>
-
-          <h3>демо бичлэг</h3>
-          <object data="assets/video/demo.mp4" type="video/mp4" width="640" height="360">
-            <p>таны браузер бичлэг тоглуулахыг дэмжихгүй байна.</p>
-          </object>
-
-          <p class="caption">
-            тайлбар: xhtml 1.0 strict стандартын хүрээнд html5-ийн video/audio таг орж ирэхгүй тул object ашиглав.
-          </p>
+          <p>зураг 2. coffee namu mongolia кафены дэлгэрэнгүй мэдээллийн интерфейс</p>
         </div>
 
       </div>
 
-      <!-- footer -->
-      <div class="site-footer">
-        <p>© 2026 bon délice. <a href="#top">дээш буцах</a></p>
-      </div>
+      <!-- map -->
+      <div id="map">
+        <h2>газрын зураг (map preview)</h2>
+        <p>
+          энэ хэсэгт хэрэглэгч тухайн газрын байршлыг газрын зураг дээрээс харах боломжтой.
+        </p>
 
+        <p>
+          <img src="assets/img/yuna-map.png" alt="yuna рестораны байршлын газрын зураг screenshot" />
+        </p>
+        <p>зураг 3. yuna рестораны байршлыг газрын зураг дээр харуулсан хэсэг</p>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div>
+      <p>© 2026 bon délice (TUGUSU)</p>
+      <p><a href="#top">дээш буцах</a></p>
     </div>
   </body>
 </html>
