@@ -1,7 +1,6 @@
-/* styles will be improved later (for the next lab) */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: arial, sans-serif;
   line-height: 1.5;
 }
 
@@ -18,8 +17,8 @@ body {
 }
 
 .logo img {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
 }
 
 .site-nav ul {
@@ -36,19 +35,13 @@ body {
 }
 
 .section {
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.card {
+.wireframe img {
+  max-width: 100%;
+  height: auto;
   border: 1px solid #cccccc;
-  padding: 12px;
-  width: 260px;
 }
 
 .caption {
@@ -56,12 +49,6 @@ body {
   margin-top: 6px;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* accessibility: show skip link only when focused */
 .skip-link a {
   position: absolute;
   left: -9999px;
@@ -75,13 +62,16 @@ img {
   padding: 8px;
 }
 
-/* responsive */
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 @media (max-width: 700px) {
   .site-nav ul {
     flex-direction: column;
-  }
-
-  .card {
-    width: 100%;
   }
 }
