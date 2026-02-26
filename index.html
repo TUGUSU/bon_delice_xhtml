@@ -7,7 +7,6 @@
 
     <title>bon délice - discover restaurants</title>
 
-    <!-- seo -->
     <meta name="description" content="bon délice веб аппликейшн: хэрэглэгчийн байршилд тулгуурлан ойролцоох ресторан, кафе, паб хайх, хайлт хийх, шүүлт хийх, газрын зураг дээр байршлыг харах ерөнхий бүтэц." />
     <meta name="keywords" content="bon délice, ресторан, кафе, паб, хайлт, шүүлт, байршил, газрын зураг, захиалга" />
     <meta name="robots" content="index, follow" />
@@ -16,8 +15,9 @@
   <body>
     <div id="top"></div>
 
+    <!-- skip link -->
     <p>
-      <a href="#main">үндсэн агуулга руу алгасах</a>
+      <a href="#main">үндсэн агуулга руу шууд шилжих</a>
     </p>
 
     <!-- header -->
@@ -25,11 +25,15 @@
       <p class="logo">
         <img src="assets/img/logo.png" alt="bon délice лого" />
       </p>
+
+      <!-- h1 is important for accessibility -->
+      <h1>bon délice</h1>
       <p>байршилд суурилсан ресторан, кафе, паб хайлт ба ширээ захиалга</p>
 
       <!-- navigation -->
       <div>
         <h2>цэс</h2>
+        <p>тэмдэглэл: css дараа нь орж touch target (товчны хэмжээ) болон зайг сайжруулна.</p>
         <ul>
           <li><a href="#search">хайлт</a></li>
           <li><a href="#filters">шүүлт</a></li>
@@ -39,7 +43,7 @@
       </div>
     </div>
 
-    <!-- main -->
+    <!-- main content (xhtml strict-д main таг байхгүй тул id="main" хэсгээр үндсэн агуулгыг тодорхойлов) -->
     <div id="main">
       <div>
         <h2>discover restaurants</h2>
@@ -73,6 +77,8 @@
             </p>
           </fieldset>
         </form>
+
+        <p>тэмдэглэл: энэ нь prototype бүтэц тул хайлт ажиллахгүй.</p>
       </div>
 
       <!-- filters -->
@@ -167,14 +173,15 @@
           <p>зураг 2. coffee namu mongolia кафены дэлгэрэнгүй мэдээллийн интерфейс</p>
         </div>
 
+        <p id="note">
+          тэмдэглэл: “reserve” нь дараагийн хуудсанд хөгжүүлэгдэх тул энэ хуудсанд ерөнхий бүтэц болон холбоосыг төлөөлөн харуулав.
+        </p>
       </div>
 
       <!-- map -->
       <div id="map">
         <h2>газрын зураг (map preview)</h2>
-        <p>
-          энэ хэсэгт хэрэглэгч тухайн газрын байршлыг газрын зураг дээрээс харах боломжтой.
-        </p>
+        <p>энэ хэсэгт хэрэглэгч тухайн газрын байршлыг газрын зураг дээрээс харах боломжтой.</p>
 
         <p>
           <img src="assets/img/yuna-map.png" alt="yuna рестораны байршлын газрын зураг screenshot" />
@@ -185,7 +192,7 @@
 
     <!-- footer -->
     <div>
-      <p>© 2026 bon délice (TUGUSU)</p>
+      <p>© 2026 bon délice (tugusu)</p>
       <p><a href="#top">дээш буцах</a></p>
     </div>
   </body>
