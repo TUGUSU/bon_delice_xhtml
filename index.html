@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="mn" lang="mn">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bon Délice - Байршилд суурилсан ресторан, кафе, паб хайлт ба ширээ захиалга</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Хэрэглэгчийн байршилд тулгуурлан ойрхон ресторан, кафе, паб хайж олох, меню үзэх, үнэлгээ унших, сэтгэгдэл бичих, ширээ онлайн захиалах веб апп." />
+    <meta name="keywords" content="ресторан, кафе, паб, ойрхон, хайлт, шүүлт, меню, үнэлгээ, сэтгэгдэл, ширээ захиалга" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Social preview -->
+    <meta property="og:title" content="Bon Délice" />
+    <meta property="og:description" content="Ойрхон хоолны газруудыг хайж олох, меню үзэх, үнэлгээ унших, ширээ захиалах." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/hero.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bon Délice" />
+    <meta name="twitter:description" content="Ресторан, кафе, паб хайлт ба ширээ захиалга." />
+    <meta name="twitter:image" content="assets/img/hero.jpg" />
+
+    <!-- CSS дараа нь орно -->
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="top"></div>
+
+    <!-- Skip link (Accessibility) -->
+    <p class="skip-link">
+      <a href="#main">Үндсэн агуулга руу алгасах</a>
+    </p>
+
+    <!-- Page wrapper -->
+    <div class="page">
+
+      <!-- Header (XHTML strict: header/nav таг ашиглахгүй, div ашиглана) -->
+      <div class="site-header" role="banner">
+        <div class="brand">
+          <p class="brand-logo">
+            <img src="assets/img/logo.png" alt="Bon Délice лого" />
+          </p>
+          <h1>Bon Délice</h1>
+          <p class="tagline">Байршилд суурилсан ресторан, кафе, паб хайлт ба ширээ захиалга</p>
+        </div>
+
+        <div class="site-nav" role="navigation" aria-label="Үндсэн цэс">
+          <ul>
+            <li><a href="#home">Нүүр</a></li>
+            <li><a href="#listing">Жагсаалт</a></li>
+            <li><a href="#search">Хайлт</a></li>
+            <li><a href="#detail">Дэлгэрэнгүй</a></li>
+            <li><a href="#reservation">Захиалга</a></li>
+            <li><a href="#auth">Нэвтрэлт</a></li>
+            <li><a href="#admin">Админ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main -->
+      <div id="main" class="main" role="main">
+
+        <!-- Home / Hero -->
+        <div id="home" class="section" role="region" aria-label="Нүүр хэсэг">
+          <h2>Ойрхон газруудыг хурдан ол, үнэлгээтэй нь харьцуул</h2>
+          <p>
+            Энэ веб апп нь хэрэглэгчийн байршилд тулгуурлан ойролцоох ресторан, кафе, пабуудыг санал болгож,
+            меню, үнэлгээ, сэтгэгдэл, газрын зураг болон ширээ захиалгыг нэг дороос үзүүлэх зорилготой.
+          </p>
+
+          <div class="hero-media">
+            <img src="assets/img/hero.jpg" alt="Bon Délice нүүр хуудасны жишээ зураг" />
+            <p class="caption">Зураг 1. Нүүр хуудасны ерөнхий харагдац (UI зураг)</p>
+          </div>
+        </div>
+
+        <!-- Listing -->
+        <div id="listing" class="section" role="region" aria-label="Ресторан жагсаалт">
+          <h2>Ресторан, кафе, пабын жагсаалт</h2>
+          <p>Жагсаалт нь ангилал, үнэлгээ, зай гэх мэт үзүүлэлтээр эрэмбэлэгдэнэ.</p>
+
+          <div class="cards" role="region" aria-label="Жагсаалтын жишээ картууд">
+            <div class="card">
+              <h3>Urban Pub</h3>
+              <p>Үнэлгээ: 4.6 / 5</p>
+              <p>Төрөл: Паб</p>
+              <p><a href="#detail">Дэлгэрэнгүй үзэх</a></p>
+            </div>
+
+            <div class="card">
+              <h3>Nomad Cafe</h3>
+              <p>Үнэлгээ: 4.4 / 5</p>
+              <p>Төрөл: Кафе</p>
+              <p><a href="#detail">Дэлгэрэнгүй үзэх</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search & Filter -->
+        <div id="search" class="section" role="region" aria-label="Хайлт ба шүүлт">
+          <h2>Хайлт ба шүүлт</h2>
+
+          <form action="#" method="get" aria-label="Хайлт хийх форм">
+            <fieldset>
+              <legend>Ойрхон газар хайх</legend>
+
+              <p>
+                <label for="q">Хайх үг (ж: бууз, паб, кофе):</label><br />
+                <input type="text" id="q" name="q" value="" />
+              </p>
+
+              <p>
+                <label for="category">Ангилал:</label><br />
+                <select id="category" name="category">
+                  <option value="restaurant">Ресторан</option>
+                  <option value="cafe">Кафе</option>
+                  <option value="pub">Паб</option>
+                </select>
+              </p>
+
+              <p>
+                <label for="radius">Зай (км):</label><br />
+                <select id="radius" name="radius">
+                  <option value="1">1 км</option>
+                  <option value="3">3 км</option>
+                  <option value="5">5 км</option>
+                  <option value="10">10 км</option>
+                </select>
+              </p>
+
+              <p>
+                <label for="sort">Эрэмбэлэх:</label><br />
+                <select id="sort" name="sort">
+                  <option value="distance">Ойртоор</option>
+                  <option value="rating">Үнэлгээгээр</option>
+                </select>
+              </p>
+
+              <p>
+                <input type="submit" value="Хайх" />
+              </p>
+            </fieldset>
+          </form>
+
+          <p class="caption">Тайлбар: Энэ хэсэг нь Search Results болон Filters логикийг төлөөлсөн ерөнхий бүтэц.</p>
+        </div>
+
+        <!-- Detail page (structure) -->
+        <div id="detail" class="section" role="region" aria-label="Газрын дэлгэрэнгүй">
+          <h2>Газрын дэлгэрэнгүй (Restaurant Detail)</h2>
+
+          <div class="detail-block">
+            <h3>Urban Pub - Дэлгэрэнгүй мэдээлэл</h3>
+            <p>Хаяг: Улаанбаатар хот, Сүхбаатар дүүрэг</p>
+            <p>Ажлын цаг: 11:00 - 23:00</p>
+
+            <p class="detail-image">
+              <img src="assets/img/restaurant-1.jpg" alt="Рестораны интерьер/хоолны жишээ зураг" />
+            </p>
+            <p class="caption">Зураг 2. Газрын дэлгэрэнгүй хэсгийн жишээ зураг</p>
+
+            <h4>Menu</h4>
+            <ul>
+              <li>Бууз - 12,000₮</li>
+              <li>Хуушуур - 10,000₮</li>
+              <li>Кофе - 8,000₮</li>
+            </ul>
+
+            <h4>Reviews</h4>
+            <ul>
+              <li>★★★★★ “Үйлчилгээ хурдан байсан.”</li>
+              <li>★★★★☆ “Орчин тухтай.”</li>
+            </ul>
+
+            <h4>Сэтгэгдэл бичих</h4>
+            <form action="#" method="post" aria-label="Сэтгэгдэл бичих форм">
+              <fieldset>
+                <legend>Үнэлгээ ба сэтгэгдэл</legend>
+
+                <p>
+                  <label for="rating">Үнэлгээ (1-5):</label><br />
+                  <select id="rating" name="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </p>
+
+                <p>
+                  <label for="comment">Сэтгэгдэл:</label><br />
+                  <textarea id="comment" name="comment" rows="4" cols="40"></textarea>
+                </p>
+
+                <p>
+                  <input type="submit" value="Илгээх" />
+                </p>
+              </fieldset>
+            </form>
+
+            <h4>Location (Map)</h4>
+            <p>
+              Газрын зураг энд байрлана (iframe эсвэл map integration дараа нь нэмнэ).
+              Одоогоор байрлалыг холбоосоор төлөөлөв:
+              <a href="https://www.openstreetmap.org/">OpenStreetMap</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Reservation flow -->
+        <div id="reservation" class="section" role="region" aria-label="Ширээ захиалга">
+          <h2>Ширээ захиалга (Reservation)</h2>
+          <p>Хэрэглэгч огноо, цаг, хүний тоо сонгон захиалга үүсгэнэ.</p>
+
+          <form action="#" method="post" aria-label="Ширээ захиалгын форм">
+            <fieldset>
+              <legend>Reservation Form</legend>
+
+              <p>
+                <label for="date">Огноо:</label><br />
+                <input type="text" id="date" name="date" value="" />
+              </p>
+
+              <p>
+                <label for="time">Цаг:</label><br />
+                <input type="text" id="time" name="time" value="" />
+              </p>
+
+              <p>
+                <label for="people">Хүний тоо:</label><br />
+                <input type="text" id="people" name="people" value="" />
+              </p>
+
+              <p>
+                <label for="fullname">Нэр:</label><br />
+                <input type="text" id="fullname" name="fullname" value="" />
+              </p>
+
+              <p>
+                <label for="phone">Утас:</label><br />
+                <input type="text" id="phone" name="phone" value="" />
+              </p>
+
+              <p>
+                <label for="note">Тайлбар (сонголтоор):</label><br />
+                <textarea id="note" name="note" rows="3" cols="40"></textarea>
+              </p>
+
+              <p>
+                <input type="submit" value="Захиалга баталгаажуулах" />
+              </p>
+            </fieldset>
+          </form>
+
+          <p class="caption">Тайлбар: Захиалга амжилттай бол Confirmation Page гарна (энд төлөөлсөн).</p>
+        </div>
+
+        <!-- Authentication -->
+        <div id="auth" class="section" role="region" aria-label="Нэвтрэлт ба бүртгэл">
+          <h2>Нэвтрэх / Бүртгүүлэх</h2>
+
+          <div class="auth-block">
+            <h3>Login</h3>
+            <form action="#" method="post" aria-label="Нэвтрэх форм">
+              <fieldset>
+                <legend>Нэвтрэх</legend>
+                <p>
+                  <label for="email">Имэйл:</label><br />
+                  <input type="text" id="email" name="email" value="" />
+                </p>
+                <p>
+                  <label for="password">Нууц үг:</label><br />
+                  <input type="password" id="password" name="password" value="" />
+                </p>
+                <p>
+                  <input type="submit" value="Нэвтрэх" />
+                </p>
+              </fieldset>
+            </form>
+
+            <h3>Register</h3>
+            <form action="#" method="post" aria-label="Бүртгүүлэх форм">
+              <fieldset>
+                <legend>Бүртгүүлэх</legend>
+                <p>
+                  <label for="rname">Нэр:</label><br />
+                  <input type="text" id="rname" name="rname" value="" />
+                </p>
+                <p>
+                  <label for="remail">Имэйл:</label><br />
+                  <input type="text" id="remail" name="remail" value="" />
+                </p>
+                <p>
+                  <label for="rpass">Нууц үг:</label><br />
+                  <input type="password" id="rpass" name="rpass" value="" />
+                </p>
+                <p>
+                  <input type="submit" value="Бүртгүүлэх" />
+                </p>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+
+        <!-- Admin panel (structure only) -->
+        <div id="admin" class="section" role="region" aria-label="Админ удирдлага">
+          <h2>Admin Panel (Conceptual)</h2>
+          <p>
+            Админ хэсэг нь системийн өгөгдлийг удирдах (crud) зориулалттай. Энэ нь концепцийн түвшинд төлөвлөгдсөн.
+          </p>
+          <ul>
+            <li>Admin Login</li>
+            <li>Dashboard</li>
+            <li>Manage Restaurants (create/read/update/delete)</li>
+            <li>Manage Menu (create/read/update/delete)</li>
+            <li>Manage Reservations</li>
+            <li>Manage Reviews</li>
+            <li>Manage Users</li>
+          </ul>
+        </div>
+
+        <!-- Media (XHTML strict compliant using object) -->
+        <div id="media" class="section" role="region" aria-label="Медиа танилцуулга">
+          <h2>Медиа (аудио, бичлэг)</h2>
+
+          <h3>Аудио танилцуулга</h3>
+          <object data="assets/audio/intro.mp3" type="audio/mpeg" width="300" height="40">
+            <p>Таны браузер аудио тоглуулахыг дэмжихгүй байна.</p>
+          </object>
+
+          <h3>Демо бичлэг</h3>
+          <object data="assets/video/demo.mp4" type="video/mp4" width="640" height="360">
+            <p>Таны браузер бичлэг тоглуулахыг дэмжихгүй байна.</p>
+          </object>
+
+          <p class="caption">Тайлбар: XHTML 1.0 Strict-д HTML5 video/audio таг орж ирэхгүй тул object ашиглан валид болгов.</p>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <div class="site-footer" role="contentinfo">
+        <p>© 2026 Bon Délice. <a href="#top">Дээш буцах</a></p>
+      </div>
+
+    </div>
+  </body>
+</html>
