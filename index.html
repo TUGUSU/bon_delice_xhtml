@@ -4,36 +4,34 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+ 
     <title>bon délice - discover restaurants</title>
-
+ 
+    <!-- seo -->
     <meta name="description" content="bon délice веб аппликейшн: хэрэглэгчийн байршилд тулгуурлан ойролцоох ресторан, кафе, паб хайх, хайлт хийх, шүүлт хийх, газрын зураг дээр байршлыг харах ерөнхий бүтэц." />
     <meta name="keywords" content="bon délice, ресторан, кафе, паб, хайлт, шүүлт, байршил, газрын зураг, захиалга" />
     <meta name="robots" content="index, follow" />
   </head>
-
+ 
   <body>
     <div id="top"></div>
-
-    <!-- skip link -->
+ 
     <p>
-      <a href="#main">үндсэн агуулга руу шууд шилжих</a>
+      <a href="#main">үндсэн агуулга руу алгасах</a>
     </p>
-
+ 
     <!-- header -->
     <div>
       <p class="logo">
-        <img src="assets/img/logo.png" alt="bon délice лого" />
+        <img src="assets/img/logo.png" alt="bon délice лого" width="64" height="64" />
       </p>
-
-      <!-- h1 is important for accessibility -->
+ 
       <h1>bon délice</h1>
       <p>байршилд суурилсан ресторан, кафе, паб хайлт ба ширээ захиалга</p>
-
+ 
       <!-- navigation -->
       <div>
         <h2>цэс</h2>
-        <p>тэмдэглэл: css дараа нь орж touch target (товчны хэмжээ) болон зайг сайжруулна.</p>
         <ul>
           <li><a href="#search">хайлт</a></li>
           <li><a href="#filters">шүүлт</a></li>
@@ -42,8 +40,8 @@
         </ul>
       </div>
     </div>
-
-    <!-- main content (xhtml strict-д main таг байхгүй тул id="main" хэсгээр үндсэн агуулгыг тодорхойлов) -->
+ 
+    <!-- main -->
     <div id="main">
       <div>
         <h2>discover restaurants</h2>
@@ -52,43 +50,41 @@
           хэрэглэгч ойролцоох ресторан/кафе/пабуудыг хайж, шүүж, жагсаалтаар харах боломжтой.
         </p>
       </div>
-
+ 
       <!-- search -->
       <div id="search">
         <h2>хайлт</h2>
-
+ 
         <form action="#" method="get">
           <fieldset>
             <legend>ойролцоох газар хайх</legend>
-
+ 
             <p>
               <label for="q">хайх үг (жишээ: кофе, солонгос, паб):</label><br />
               <input type="text" id="q" name="q" value="" />
             </p>
-
+ 
             <p>
               <label for="location">байршил (жишээ):</label><br />
               <input type="text" id="location" name="location" value="улаанбаатар" />
             </p>
-
+ 
             <p>
               <input type="submit" value="хайх" />
               <input type="reset" value="цэвэрлэх" />
             </p>
           </fieldset>
         </form>
-
-        <p>тэмдэглэл: энэ нь prototype бүтэц тул хайлт ажиллахгүй.</p>
       </div>
-
+ 
       <!-- filters -->
       <div id="filters">
         <h2>шүүлт (filter options)</h2>
-
+ 
         <form action="#" method="get">
           <fieldset>
             <legend>шүүлт хийх</legend>
-
+ 
             <p>
               <label for="category">төрөл:</label><br />
               <select id="category" name="category">
@@ -98,7 +94,7 @@
                 <option value="pub">паб</option>
               </select>
             </p>
-
+ 
             <p>
               <label for="radius">зай (км):</label><br />
               <select id="radius" name="radius">
@@ -108,7 +104,7 @@
                 <option value="10">10</option>
               </select>
             </p>
-
+ 
             <p>
               <label for="rating">үнэлгээ:</label><br />
               <select id="rating" name="rating">
@@ -117,7 +113,7 @@
                 <option value="3plus">3+</option>
               </select>
             </p>
-
+ 
             <p>
               <label for="open">одоогоор нээлттэй эсэх:</label><br />
               <select id="open" name="open">
@@ -126,19 +122,19 @@
                 <option value="closed">хаалттай</option>
               </select>
             </p>
-
+ 
             <p>
               <input type="submit" value="шүүлт хэрэглэх" />
             </p>
           </fieldset>
         </form>
       </div>
-
+ 
       <!-- results -->
       <div id="results">
         <h2>жагсаалт (restaurant listing)</h2>
         <p>доорх нь бодит screenshot ашигласан жишээ жагсаалт.</p>
-
+ 
         <div>
           <h3>yuna</h3>
           <p>төрөл: солонгос ресторан, ази ресторан</p>
@@ -151,11 +147,11 @@
             <a href="#note">reserve (дараагийн хуудсанд)</a>
           </p>
           <p>
-            <img src="assets/img/yuna-detail.png" alt="yuna рестораны дэлгэрэнгүй хуудасны screenshot" />
+            <img src="assets/img/yuna-detail.png" alt="yuna рестораны дэлгэрэнгүй хуудасны screenshot" width="600" height="360" />
           </p>
           <p>зураг 1. yuna рестораны дэлгэрэнгүй мэдээллийн интерфейс</p>
         </div>
-
+ 
         <div>
           <h3>coffee namu mongolia</h3>
           <p>төрөл: кафе</p>
@@ -168,28 +164,30 @@
             <a href="#note">reserve (дараагийн хуудсанд)</a>
           </p>
           <p>
-            <img src="assets/img/coffee-detail.png" alt="coffee namu mongolia кафены дэлгэрэнгүй хуудасны screenshot" />
+            <img src="assets/img/coffee-detail.png" alt="coffee namu mongolia кафены дэлгэрэнгүй хуудасны screenshot" width="600" height="360" />
           </p>
           <p>зураг 2. coffee namu mongolia кафены дэлгэрэнгүй мэдээллийн интерфейс</p>
         </div>
-
+ 
         <p id="note">
-          тэмдэглэл: “reserve” нь дараагийн хуудсанд хөгжүүлэгдэх тул энэ хуудсанд ерөнхий бүтэц болон холбоосыг төлөөлөн харуулав.
+          тэмдэглэл: “reserve” нь дараагийн хуудсанд хөгжүүлэгдэх тул энэ хуудсанд зөвхөн ерөнхий бүтэц болон холбоосыг төлөөлөн харуулав.
         </p>
       </div>
-
+ 
       <!-- map -->
       <div id="map">
         <h2>газрын зураг (map preview)</h2>
-        <p>энэ хэсэгт хэрэглэгч тухайн газрын байршлыг газрын зураг дээрээс харах боломжтой.</p>
-
         <p>
-          <img src="assets/img/yuna-map.png" alt="yuna рестораны байршлын газрын зураг screenshot" />
+          энэ хэсэгт хэрэглэгч тухайн газрын байршлыг газрын зураг дээрээс харах боломжтой.
+        </p>
+ 
+        <p>
+          <img src="assets/img/yuna-map.png" alt="yuna рестораны байршлын газрын зураг screenshot" width="600" height="360" />
         </p>
         <p>зураг 3. yuna рестораны байршлыг газрын зураг дээр харуулсан хэсэг</p>
       </div>
     </div>
-
+ 
     <!-- footer -->
     <div>
       <p>© 2026 bon délice (tugusu)</p>
@@ -197,4 +195,3 @@
     </div>
   </body>
 </html>
-
