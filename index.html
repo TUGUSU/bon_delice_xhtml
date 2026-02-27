@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="mn" lang="mn">
@@ -183,3 +184,190 @@
 
   </body>
 </html>
+=======
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="mn" lang="mn">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>bon délice - discover restaurants</title>
+
+    <meta name="description" content="Bon Délice веб аппликейшн нь хэрэглэгчийн байршилд тулгуурлан ойролцоох ресторан, кафе, паб хайх, шүүх, жагсаалтаар харах болон газрын зураг дээр байршлыг шалгах боломжийг олгоно." />
+    <meta name="keywords" content="bon délice, ресторан, кафе, паб, хайлт, шүүлт, байршил" />
+    <meta name="robots" content="index, follow" />
+  </head>
+
+  <body>
+    <div id="top"></div>
+
+    <p>
+      <a href="#main">үндсэн агуулга руу шилжих</a>
+    </p>
+
+    <div>
+      <p>
+        <img src="assets/img/logo.png" alt="bon délice лого" width="243" height="180" />
+      </p>
+
+      <h1>bon délice</h1>
+      <p>байршилд суурилсан ресторан, кафе, паб хайлт ба ширээ захиалга</p>
+
+      <div>
+        <h2>цэс</h2>
+        <ul>
+          <li><a href="#search">хайлт</a></li>
+          <li><a href="#filters">шүүлт</a></li>
+          <li><a href="#results">жагсаалт</a></li>
+          <li><a href="#map">газрын зураг</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="main">
+
+      <div>
+        <h2>discover restaurants</h2>
+        <p>
+          Хэрэглэгч ойролцоох ресторан, кафе, пабуудыг хайх, төрөл болон зайгаар шүүх,
+          үр дүнг жагсаалтаар харах боломжтой.
+        </p>
+      </div>
+
+      <div id="search">
+        <h2>хайлт</h2>
+
+        <form action="#" method="get">
+          <fieldset>
+            <legend>ресторан хайх</legend>
+
+            <p>
+              <label for="q">хайх түлхүүр үг:</label><br />
+              <input type="text" id="q" name="q" value="" />
+            </p>
+
+            <p>
+              <label for="location">байршил:</label><br />
+              <input type="text" id="location" name="location" value="улаанбаатар" />
+            </p>
+
+            <p>
+              <input type="submit" value="хайх" />
+              <input type="reset" value="цэвэрлэх" />
+            </p>
+
+          </fieldset>
+        </form>
+      </div>
+
+      <div id="filters">
+        <h2>шүүлт</h2>
+
+        <form action="#" method="get">
+          <fieldset>
+            <legend>шүүлтийн сонголтууд</legend>
+
+            <p>
+              <label for="category">төрөл:</label><br />
+              <select id="category" name="category">
+                <option value="all">бүгд</option>
+                <option value="restaurant">ресторан</option>
+                <option value="cafe">кафе</option>
+                <option value="pub">паб</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="radius">зай (км):</label><br />
+              <select id="radius" name="radius">
+                <option value="1">1</option>
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="rating">үнэлгээ:</label><br />
+              <select id="rating" name="rating">
+                <option value="any">ялгаагүй</option>
+                <option value="4plus">4+</option>
+                <option value="3plus">3+</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="open">нээлттэй эсэх:</label><br />
+              <select id="open" name="open">
+                <option value="any">ялгаагүй</option>
+                <option value="open">нээлттэй</option>
+                <option value="closed">хаалттай</option>
+              </select>
+            </p>
+
+            <p>
+              <input type="submit" value="шүүлт хэрэглэх" />
+            </p>
+
+          </fieldset>
+        </form>
+      </div>
+
+      <div id="results">
+        <h2>жагсаалт</h2>
+
+        <div>
+          <h3>yuna</h3>
+          <p>төрөл: солонгос ресторан</p>
+          <p>үнэлгээ: 4.3</p>
+          <p>зай: 0.6 км</p>
+          <p>
+            <a href="#map">байршлыг харах</a>
+          </p>
+          <p>
+            <img src="assets/img/yuna-detail.png"
+                 alt="yuna рестораны дэлгэрэнгүй хуудасны зураг"
+                 width="393"
+                 height="852" />
+          </p>
+        </div>
+
+        <div>
+          <h3>coffee namu mongolia</h3>
+          <p>төрөл: кафе</p>
+          <p>үнэлгээ: 4.8</p>
+          <p>зай: 0.6 км</p>
+          <p>
+            <a href="#map">байршлыг харах</a>
+          </p>
+          <p>
+            <img src="assets/img/coffee-detail.png"
+                 alt="coffee namu mongolia кафены дэлгэрэнгүй хуудасны зураг"
+                 width="393"
+                 height="852" />
+          </p>
+        </div>
+
+      </div>
+
+      <div id="map">
+        <h2>газрын зураг</h2>
+        <p>
+          <img src="assets/img/yuna-map.png"
+               alt="yuna рестораны байршлын газрын зураг"
+               width="393"
+               height="852" />
+        </p>
+      </div>
+
+    </div>
+
+    <div>
+      <p>© 2026 bon délice</p>
+      <p><a href="#top">дээш буцах</a></p>
+    </div>
+
+  </body>
+</html>
+>>>>>>> ad7d658 (first commit)
