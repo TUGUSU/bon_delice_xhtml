@@ -14,7 +14,7 @@ Bon Delice Захиалга веб интерфейс
 | File Module | Editor |
 |---|---|
 | `order_details` | Batmunkh |
-| `res_research` | Төгстөгөлдөр |
+| `res_research` | Tugstuguldur |
 | `seperate` | Temvvlen |
 | `zahialga` | Telmvvn |
 
