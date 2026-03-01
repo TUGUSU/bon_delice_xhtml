@@ -164,6 +164,105 @@
 
       </div>
 
+      <!-- detail -->
+<div id="detail">
+  <h2>рестораны дэлгэрэнгүй</h2>
+
+  <div>
+    <h3>yuna</h3>
+    <p>төрөл: солонгос ресторан</p>
+    <p>үнэлгээ: 4.3 (86 сэтгэгдэл)</p>
+    <p>ажиллах цаг: 11:00 - 00:00</p>
+    <p>
+      тайлбар: yuna ресторан нь солонгос хоолны чиглэлтэй бөгөөд хэрэглэгчдэд меню,
+      үнэлгээ, байршлын мэдээллийг нэг дороос харуулах боломжтой.
+    </p>
+    <p>
+      <a href="#menu">цэс харах</a> |
+      <a href="#reviews">сэтгэгдэл харах</a> |
+      <a href="#map">байршил харах</a>
+    </p>
+  </div>
+</div>
+
+<!-- menu -->
+<div id="menu">
+  <h2>үндсэн цэс</h2>
+
+  <table summary="yuna рестораны жишээ меню">
+    <caption>yuna - меню (жишээ)</caption>
+    <tr>
+      <th scope="col">хоол</th>
+      <th scope="col">тайлбар</th>
+      <th scope="col">үнэ</th>
+    </tr>
+    <tr>
+      <td>kimchi jjigae</td>
+      <td>кимчи шөл</td>
+      <td>18,000₮</td>
+    </tr>
+    <tr>
+      <td>bulgogi</td>
+      <td>амталсан үхрийн мах</td>
+      <td>22,000₮</td>
+    </tr>
+    <tr>
+      <td>bibimbap</td>
+      <td>ногоотой будаатай хоол</td>
+      <td>16,000₮</td>
+    </tr>
+  </table>
+</div>
+
+<!-- reviews -->
+<div id="reviews">
+  <h2>сэтгэгдэл ба үнэлгээ</h2>
+
+  <div>
+    <h3>сэтгэгдлийн жагсаалт</h3>
+    <ul>
+      <li>5 од — “амттай байсан, дахин очно.”</li>
+      <li>4 од — “үйлчилгээ сайн, бага зэрэг хүлээлттэй.”</li>
+      <li>4 од — “цэвэрхэн орчинтой.”</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>сэтгэгдэл бичих</h3>
+    <form action="#" method="post">
+      <fieldset>
+        <legend>шинэ сэтгэгдэл</legend>
+
+        <p>
+          <label for="review-name">нэр:</label><br />
+          <input type="text" id="review-name" name="review-name" value="" />
+        </p>
+
+        <p>
+          <label for="review-rating">үнэлгээ (1-5):</label><br />
+          <select id="review-rating" name="review-rating">
+            <option value="5">5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="review-text">сэтгэгдэл:</label><br />
+          <textarea id="review-text" name="review-text" rows="4" cols="40"></textarea>
+        </p>
+
+        <p>
+          <input type="submit" value="илгээх" />
+          <input type="reset" value="цэвэрлэх" />
+        </p>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
       <div id="map">
         <h2>газрын зураг</h2>
         <p>
