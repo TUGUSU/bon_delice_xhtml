@@ -1,0 +1,508 @@
+/* =========================================================
+   bon délice — CSS (no framework)
+   Goal: typography + chips + list UI + responsive + themes
+   ========================================================= */
+
+/* ---------- Web font (fallback is safe) ---------- */
+:root {
+  /* Typography */
+  --font-sans: "Noto Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --fs-0: 0.875rem;
+  --fs-1: 1rem;
+  --fs-2: 1.125rem;
+  --fs-3: 1.375rem;
+  --fs-4: 1.75rem;
+
+  --lh-tight: 1.25;
+  --lh-normal: 1.55;
+  --ls-tight: -0.01em;
+  --ls-normal: 0.01em;
+
+  /* Spacing scale */
+  --sp-1: 0.375rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.25rem;
+  --sp-6: 1.5rem;
+  --sp-7: 2rem;
+
+  /* Radius + shadow */
+  --r-1: 0.75rem;
+  --r-2: 1rem;
+  --r-3: 1.25rem;
+
+  --sh-1: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.08);
+  --sh-2: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.12);
+
+  /* Motion */
+  --dur-1: 140ms;
+  --dur-2: 220ms;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Layout */
+  --container: 68rem;
+  --phone: 28rem;
+
+  /* Light theme colors */
+  --bg: #f6f4fb;
+  --surface: #ffffff;
+  --text: #12121a;
+  --muted: #5b5b6b;
+  --line: rgba(18, 18, 26, 0.10);
+
+  --brand: #e11d48;   /* rose */
+  --brand-2: #fb7185; /* soft rose */
+  --good: #16a34a;
+
+  --chip-bg: rgba(18, 18, 26, 0.06);
+  --chip-text: #1b1b25;
+
+  --grad: linear-gradient(135deg, rgba(225, 29, 72, 0.18), rgba(99, 102, 241, 0.12));
+}
+
+/* Optional: manual dark mode by adding class="theme-dark" on <body> */
+body.theme-dark {
+  --bg: #0b0b10;
+  --surface: #12121a;
+  --text: #f3f4f6;
+  --muted: rgba(243, 244, 246, 0.72);
+  --line: rgba(243, 244, 246, 0.14);
+
+  --chip-bg: rgba(243, 244, 246, 0.10);
+  --chip-text: #f3f4f6;
+
+  --sh-1: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.45);
+  --sh-2: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.55);
+
+  --grad: linear-gradient(135deg, rgba(225, 29, 72, 0.22), rgba(56, 189, 248, 0.10));
+}
+
+/* Auto dark mode (if you don't want it, remove this block) */
+@media (prefers-color-scheme: dark) {
+  body {
+    --bg: #0b0b10;
+    --surface: #12121a;
+    --text: #f3f4f6;
+    --muted: rgba(243, 244, 246, 0.72);
+    --line: rgba(243, 244, 246, 0.14);
+
+    --chip-bg: rgba(243, 244, 246, 0.10);
+    --chip-text: #f3f4f6;
+
+    --sh-1: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.45);
+    --sh-2: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.55);
+
+    --grad: linear-gradient(135deg, rgba(225, 29, 72, 0.22), rgba(56, 189, 248, 0.10));
+  }
+}
+
+/* ---------- Base reset ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-1);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-normal);
+  color: var(--text);
+  background: var(--bg);
+  background-image: var(--grad);
+  background-attachment: fixed;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--r-2);
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+p {
+  margin: 0 0 var(--sp-4) 0;
+}
+
+ul {
+  margin: 0 0 var(--sp-4) 0;
+  padding-left: 1.25rem;
+}
+
+/* ---------- Skip link (accessibility friendly without aria/role) ---------- */
+a[href="#main"] {
+  position: absolute;
+  left: -9999px;
+  top: 0.5rem;
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-1);
+  box-shadow: var(--sh-1);
+}
+
+a[href="#main"]:focus {
+  left: 0.75rem;
+  z-index: 50;
+}
+
+/* ---------- Page container ---------- */
+#main {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--sp-6) var(--sp-4) var(--sp-7);
+}
+
+/* ---------- Header block (your first big top area) ---------- */
+body > div {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--sp-6) var(--sp-4) var(--sp-4);
+}
+
+body > div > p:first-child img {
+  width: min(12rem, 55vw);
+  height: auto;
+  border-radius: var(--r-2);
+  box-shadow: var(--sh-1);
+}
+
+h1 {
+  font-size: var(--fs-4);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  margin: var(--sp-3) 0 var(--sp-2);
+}
+
+h2 {
+  font-size: var(--fs-3);
+  line-height: var(--lh-tight);
+  margin: var(--sp-6) 0 var(--sp-3);
+}
+
+h3 {
+  font-size: var(--fs-2);
+  margin: var(--sp-5) 0 var(--sp-2);
+}
+
+/* ---------- Top menu list ---------- */
+body > div ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--sp-3) 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+body > div ul li {
+  margin: 0;
+}
+
+body > div ul a {
+  display: inline-block;
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--sh-1);
+  transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease);
+}
+
+body > div ul a:hover,
+body > div ul a:focus {
+  transform: translateY(-2px);
+  box-shadow: var(--sh-2);
+}
+
+/* ---------- “Screen cards” look ---------- */
+#screen-a,
+#screen-b,
+#screen-c {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--line);
+  border-radius: var(--r-3);
+  box-shadow: var(--sh-1);
+  padding: var(--sp-6);
+  margin: var(--sp-6) 0;
+  backdrop-filter: blur(10px);
+  animation: riseIn 420ms var(--ease) both;
+}
+
+@media (prefers-color-scheme: dark) {
+  #screen-a,
+  #screen-b,
+  #screen-c {
+    background: rgba(18, 18, 26, 0.70);
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Forms ---------- */
+form {
+  margin: 0 0 var(--sp-5);
+}
+
+fieldset {
+  border: 1px solid var(--line);
+  border-radius: var(--r-2);
+  padding: var(--sp-5);
+  background: var(--surface);
+  box-shadow: var(--sh-1);
+}
+
+legend {
+  padding: 0 var(--sp-2);
+  font-weight: 700;
+}
+
+label {
+  font-weight: 600;
+}
+
+input[type="text"],
+select {
+  width: min(30rem, 100%);
+  padding: var(--sp-3) var(--sp-4);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+  transition: box-shadow var(--dur-2) var(--ease), transform var(--dur-2) var(--ease);
+}
+
+input[type="text"]:focus,
+select:focus {
+  box-shadow: 0 0 0 0.25rem rgba(225, 29, 72, 0.22);
+}
+
+input[type="submit"],
+input[type="reset"] {
+  padding: var(--sp-3) var(--sp-5);
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease), background var(--dur-2) var(--ease);
+}
+
+input[type="submit"] {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus {
+  transform: translateY(-2px);
+  box-shadow: var(--sh-2);
+}
+
+/* ---------- Inline SVG icon ---------- */
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  vertical-align: middle;
+  fill: currentColor;
+  color: var(--muted);
+  margin-right: var(--sp-2);
+}
+
+/* ---------- Chip row (horizontal, like your screenshots) ---------- */
+.chip-row {
+  display: flex;
+  gap: var(--sp-2);
+  overflow-x: auto;
+  padding: var(--sp-2);
+  border-radius: var(--r-2);
+  background: rgba(18, 18, 26, 0.03);
+  border: 1px solid var(--line);
+  scroll-snap-type: x mandatory;
+}
+
+.chip-row > input[type="radio"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.chip-row > label {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: 999px;
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease), background var(--dur-2) var(--ease);
+}
+
+.chip-row > label:hover,
+.chip-row > label:focus {
+  transform: translateY(-1px);
+  box-shadow: var(--sh-1);
+}
+
+.chip-row > input[type="radio"]:checked + label {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #ffffff;
+  box-shadow: var(--sh-2);
+  animation: chipPop 240ms var(--ease) both;
+}
+
+@keyframes chipPop {
+  from { transform: scale(0.98); }
+  to { transform: scale(1); }
+}
+
+/* ---------- Listing cards (buildable for future CSS step) ---------- */
+.list-grid {
+  display: grid;
+  gap: var(--sp-4);
+  grid-template-columns: 1fr;
+}
+
+.list-card {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: var(--sp-4);
+  padding: var(--sp-4);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2);
+  box-shadow: var(--sh-1);
+  transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease);
+}
+
+.list-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sh-2);
+}
+
+.list-card img {
+  width: 100%;
+  height: 6.25rem;
+  object-fit: cover;
+  border-radius: var(--r-2);
+}
+
+.list-card .title {
+  font-weight: 800;
+  font-size: var(--fs-2);
+  margin: 0 0 var(--sp-2);
+}
+
+.list-card .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2) var(--sp-3);
+  color: var(--muted);
+  font-size: var(--fs-0);
+}
+
+/* ---------- Make screenshots look like phone UI blocks ---------- */
+#screen-a img,
+#screen-b img,
+#screen-c img {
+  border: 1px solid var(--line);
+  box-shadow: var(--sh-2);
+}
+
+/* ---------- Responsive (3 modes) ---------- */
+
+/* 1) Mobile portrait */
+@media (max-width: 480px) {
+  body > div {
+    padding: var(--sp-5) var(--sp-4) var(--sp-3);
+  }
+
+  #main {
+    padding: var(--sp-5) var(--sp-4) var(--sp-7);
+  }
+
+  #screen-a,
+  #screen-b,
+  #screen-c {
+    padding: var(--sp-5);
+  }
+
+  fieldset {
+    padding: var(--sp-4);
+  }
+
+  input[type="text"],
+  select {
+    width: 100%;
+  }
+}
+
+/* 2) Mobile landscape */
+@media (max-width: 900px) and (orientation: landscape) {
+  #screen-a,
+  #screen-b,
+  #screen-c {
+    padding: var(--sp-5);
+  }
+
+  body > div ul {
+    gap: var(--sp-1);
+  }
+
+  body > div ul a {
+    padding: var(--sp-2) var(--sp-3);
+  }
+}
+
+/* 3) Desktop */
+@media (min-width: 900px) {
+  /* Screens side breathing */
+  #main {
+    padding-left: var(--sp-6);
+    padding-right: var(--sp-6);
+  }
+
+  /* Better reading width inside sections */
+  #screen-a p,
+  #screen-b p,
+  #screen-c p {
+    max-width: 60ch;
+  }
+
+  /* Example grid for future: if you add .list-grid + .list-card markup later */
+  .list-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
