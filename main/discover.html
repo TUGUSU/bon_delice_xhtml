@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="mn" lang="mn">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>bon délice - discover</title>
+
+    <meta name="description" content="Bon Délice веб аппликейшн: нүүр дэлгэц, ангиллаар сонгох, жагсаалт харах, эрэмбэлэх, улс/төрлөөр шүүх, хайлт хийх ерөнхий бүтэц." />
+    <meta name="keywords" content="bon délice, ресторан, кафе, паб, хайлт, шүүлт, эрэмбэлэлт" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+  </head>
+
+  <body>
+    <div id="top"></div>
+
+    <p>
+      <a href="#main">үндсэн агуулга руу шилжих</a>
+    </p>
+
+    <div role="banner">
+      <p>
+        <img src="assets/img/logo.png" alt="bon délice лого" width="243" height="180" />
+      </p>
+
+      <h1>bon délice</h1>
+      <p>байршилд суурилсан ресторан, кафе, паб хайлт ба эрэмбэлэлт</p>
+
+      <div role="navigation" aria-label="үндсэн цэс">
+        <h2>цэс</h2>
+        <ul>
+          <li><a href="#screen-a">нүүр</a></li>
+          <li><a href="#screen-b">жагсаалт</a></li>
+          <li><a href="#screen-c">хайлт</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="main" role="main">
+      <div id="screen-a">
+        <h2>нүүр дэлгэц</h2>
+
+        <p>
+          таны одоогийн байршил: <strong>bayanzurkh district, 26 street</strong>
+        </p>
+
+        <p>
+          <img
+            src="assets/img/home.png"
+            alt="нүүр дэлгэц: байршил, ангилал сонголтууд, доод хэсэгт санал болгох жагсаалт"
+            width="393"
+            height="852" />
+        </p>
+
+        <h3>ангилал</h3>
+        <ul>
+          <li><a href="#screen-b">ресторан</a></li>
+          <li><a href="#screen-b">кафе</a></li>
+          <li><a href="#screen-b">баар &amp; лоунж</a></li>
+        </ul>
+
+        <p>
+          <a href="#screen-c">хайлт руу очих</a>
+        </p>
+      </div>
+
+      <div id="screen-b">
+        <h2>жагсаалт ба шүүлт</h2>
+
+        <h3>эрэмбэлэлт</h3>
+        <form action="#screen-b" method="get">
+          <fieldset>
+            <legend>эрэмбэлэх сонголт</legend>
+
+            <p>
+              <label for="sortby">эрэмбэлэх:</label><br />
+              <select id="sortby" name="sortby">
+                <option value="popular">алдартай</option>
+                <option value="rating">үнэлгээ өндөр</option>
+                <option value="new">сүүлд нэмэгдсэн</option>
+              </select>
+            </p>
+
+            <p>
+              <input type="submit" value="эрэмбэлэх" />
+            </p>
+          </fieldset>
+        </form>
+
+        <h3>улс/төрлөөр шүүх</h3>
+        <form action="#screen-b" method="get">
+          <fieldset>
+            <legend>улсаар шүүх</legend>
+
+            <p>
+              <input type="radio" id="chip-korean" name="cuisine" value="korean" />
+              <label for="chip-korean">солонгос</label>
+              <br />
+
+              <input type="radio" id="chip-europe" name="cuisine" value="europe" />
+              <label for="chip-europe">европ</label>
+              <br />
+
+              <input type="radio" id="chip-chinese" name="cuisine" value="chinese" />
+              <label for="chip-chinese">хятад</label>
+              <br />
+
+              <input type="radio" id="chip-italian" name="cuisine" value="italian" />
+              <label for="chip-italian">итали</label>
+              <br />
+
+              <input type="radio" id="chip-mongolian" name="cuisine" value="mongolian" />
+              <label for="chip-mongolian">монгол</label>
+            </p>
+
+            <p>
+              <input type="submit" value="шүүх" />
+              <input type="reset" value="цэвэрлэх" />
+            </p>
+          </fieldset>
+        </form>
+
+        <h3>нэмэлт шүүлт</h3>
+        <form action="#screen-b" method="get">
+          <fieldset>
+            <legend>нарийвчилсан шүүлт</legend>
+
+            <p>
+              <label for="distance">зай (км):</label><br />
+              <select id="distance" name="distance">
+                <option value="1">1</option>
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="minrating">хамгийн бага үнэлгээ:</label><br />
+              <select id="minrating" name="minrating">
+                <option value="any">ялгаагүй</option>
+                <option value="4">4+</option>
+                <option value="3">3+</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="open">одоогоор нээлттэй эсэх:</label><br />
+              <select id="open" name="open">
+                <option value="any">ялгаагүй</option>
+                <option value="open">нээлттэй</option>
+                <option value="closed">хаалттай</option>
+              </select>
+            </p>
+
+            <p>
+              <input type="submit" value="шүүлт хэрэглэх" />
+              <input type="reset" value="цэвэрлэх" />
+            </p>
+          </fieldset>
+        </form>
+
+        <h3>жагсаалтын жишээ</h3>
+
+        <p>
+          <img
+            src="assets/img/search_rest.png"
+            alt="ресторан жагсаалт: нэр, үнэлгээ, сэтгэгдлийн тоо, таг бүхий жагсаалт"
+            width="393"
+            height="852" />
+        </p>
+
+        <p>
+          <img
+            src="assets/img/sort_kor.png"
+            alt="улс/төрөл сонгосны дараах жишээ жагсаалт"
+            width="393"
+            height="852" />
+        </p>
+
+        <p>
+          <a href="#screen-c">хайлт руу очих</a>
+        </p>
+      </div>
+
+      <div id="screen-c">
+        <h2>хайлт</h2>
+
+        <p>
+          <img
+            src="assets/img/searchby_chips.png"
+            alt="хайлт дэлгэц: ресторан, кафе, паб ангилал тус бүрийн chips сонголтууд"
+            width="393"
+            height="852" />
+        </p>
+
+        <h3>нэрээр хайх</h3>
+        <form action="#screen-b" method="get">
+          <fieldset>
+            <legend>хайлтын форм</legend>
+
+            <p>
+              <label for="q-search">нэрээр хайх:</label><br />
+              <input type="text" id="q-search" name="q" value="" />
+            </p>
+
+            <p>
+              <input type="submit" value="хайх" />
+              <input type="reset" value="цэвэрлэх" />
+            </p>
+          </fieldset>
+        </form>
+
+        <h3>chips-ээр хайх</h3>
+        <form action="#screen-b" method="get">
+          <fieldset>
+            <legend>chips сонголт</legend>
+
+            <p>
+              <strong>ресторан:</strong><br />
+              <input type="radio" id="r-korean" name="chip" value="korean" />
+              <label for="r-korean">солонгос</label>
+              <br />
+              <input type="radio" id="r-europe" name="chip" value="europe" />
+              <label for="r-europe">европ</label>
+              <br />
+              <input type="radio" id="r-chinese" name="chip" value="chinese" />
+              <label for="r-chinese">хятад</label>
+              <br />
+              <input type="radio" id="r-italian" name="chip" value="italian" />
+              <label for="r-italian">итали</label>
+              <br />
+              <input type="radio" id="r-mongolian" name="chip" value="mongolian" />
+              <label for="r-mongolian">монгол</label>
+            </p>
+
+            <p>
+              <strong>кафе:</strong><br />
+              <input type="radio" id="c-coffee" name="chip" value="coffee" />
+              <label for="c-coffee">кофе шоп</label>
+              <br />
+              <input type="radio" id="c-bubbletea" name="chip" value="bubbletea" />
+              <label for="c-bubbletea">бөмбөлөгтэй цай</label>
+              <br />
+              <input type="radio" id="c-breakfast" name="chip" value="breakfast" />
+              <label for="c-breakfast">өглөөний цай</label>
+            </p>
+
+            <p>
+              <strong>паб:</strong><br />
+              <input type="radio" id="p-pub" name="chip" value="pub" />
+              <label for="p-pub">паб</label>
+              <br />
+              <input type="radio" id="p-lounge" name="chip" value="lounge" />
+              <label for="p-lounge">лоунж</label>
+              <br />
+              <input type="radio" id="p-club" name="chip" value="club" />
+              <label for="p-club">клуб</label>
+            </p>
+
+            <p>
+              <input type="submit" value="сонгосноор жагсаалт руу" />
+              <input type="reset" value="цэвэрлэх" />
+            </p>
+          </fieldset>
+        </form>
+
+        <p>
+          <a href="#screen-a">нүүр рүү буцах</a>
+        </p>
+      </div>
+    </div>
+
+    <div role="contentinfo">
+      <p>© 2026 bon délice tugusu</p>
+      <p><a href="#top">дээш буцах</a></p>
+    </div>
+  </body>
+</html>
