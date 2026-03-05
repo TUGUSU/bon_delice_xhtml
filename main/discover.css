@@ -1,9 +1,4 @@
-/* =========================================================
-   bon délice — CSS (no framework)
-   Goal: typography + chips + list UI + responsive + themes
-   ========================================================= */
 
-/* ---------- Web font (fallback is safe) ---------- */
 :root {
   /* Typography */
   --font-sans: "Noto Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
@@ -506,3 +501,4 @@ input[type="reset"]:focus {
     grid-template-columns: 1fr 1fr;
   }
 }
+
