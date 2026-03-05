@@ -1,504 +1,426 @@
+/* bon délice - discover.css (CSS only)
+   - DRY custom properties
+   - typography (Монгол: word/line spacing)
+   - gradient, shadow, radius
+   - transition + animation
+   - grid + flex + responsive (3 breakpoints)
+   - dark/light toggle (no JS)
+*/
 
-:root {
-  /* Typography */
-  --font-sans: "Noto Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  --fs-0: 0.875rem;
-  --fs-1: 1rem;
-  --fs-2: 1.125rem;
-  --fs-3: 1.375rem;
-  --fs-4: 1.75rem;
+/* ======================
+   1) Tokens (Light default)
+   ====================== */
+:root{
+  --font:"Noto Sans", Arial, sans-serif;
 
-  --lh-tight: 1.25;
-  --lh-normal: 1.55;
-  --ls-tight: -0.01em;
-  --ls-normal: 0.01em;
+  --fs0:0.9rem;
+  --fs1:1rem;
+  --fs2:1.4rem;
 
-  /* Spacing scale */
-  --sp-1: 0.375rem;
-  --sp-2: 0.5rem;
-  --sp-3: 0.75rem;
-  --sp-4: 1rem;
-  --sp-5: 1.25rem;
-  --sp-6: 1.5rem;
-  --sp-7: 2rem;
+  --lh:1.55;
+  --ws:0.08em;
 
-  /* Radius + shadow */
-  --r-1: 0.75rem;
-  --r-2: 1rem;
-  --r-3: 1.25rem;
+  --s1:0.4rem;
+  --s2:0.7rem;
+  --s3:1rem;
+  --s4:1.4rem;
 
-  --sh-1: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.08);
-  --sh-2: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.12);
+  --r1:0.8rem;
+  --r2:1.2rem;
 
-  /* Motion */
-  --dur-1: 140ms;
-  --dur-2: 220ms;
-  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --sh1:0 10px 26px rgba(0,0,0,0.10);
+  --sh2:0 16px 40px rgba(0,0,0,0.16);
 
-  /* Layout */
-  --container: 68rem;
-  --phone: 28rem;
+  --bg:#ffffff;
+  --card:#f6f7fb;
+  --line:#e5e7eb;
 
-  /* Light theme colors */
-  --bg: #f6f4fb;
-  --surface: #ffffff;
-  --text: #12121a;
-  --muted: #5b5b6b;
-  --line: rgba(18, 18, 26, 0.10);
+  --text:#111827;
+  --muted:#6b7280;
 
-  --brand: #e11d48;   /* rose */
-  --brand-2: #fb7185; /* soft rose */
-  --good: #16a34a;
+  --brand:#e11d48;
+  --chip:#eef2ff;
 
-  --chip-bg: rgba(18, 18, 26, 0.06);
-  --chip-text: #1b1b25;
-
-  --grad: linear-gradient(135deg, rgba(225, 29, 72, 0.18), rgba(99, 102, 241, 0.12));
+  --grad:linear-gradient(135deg, rgba(225,29,72,0.10), rgba(59,130,246,0.10));
 }
 
-/* Optional: manual dark mode by adding class="theme-dark" on <body> */
-body.theme-dark {
-  --bg: #0b0b10;
-  --surface: #12121a;
-  --text: #f3f4f6;
-  --muted: rgba(243, 244, 246, 0.72);
-  --line: rgba(243, 244, 246, 0.14);
-
-  --chip-bg: rgba(243, 244, 246, 0.10);
-  --chip-text: #f3f4f6;
-
-  --sh-1: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.45);
-  --sh-2: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.55);
-
-  --grad: linear-gradient(135deg, rgba(225, 29, 72, 0.22), rgba(56, 189, 248, 0.10));
+/* ======================
+   2) Dark mode (CSS only)
+   We switch variables on #page (wrapper)
+   ====================== */
+#theme-toggle{
+  position:absolute;
+  left:-9999px;
+  width:1px;
+  height:1px;
+  overflow:hidden;
 }
 
-/* Auto dark mode (if you don't want it, remove this block) */
-@media (prefers-color-scheme: dark) {
-  body {
-    --bg: #0b0b10;
-    --surface: #12121a;
-    --text: #f3f4f6;
-    --muted: rgba(243, 244, 246, 0.72);
-    --line: rgba(243, 244, 246, 0.14);
+#theme-toggle:checked ~ #page{
+  --bg:#0b0f19;
+  --card:#0f172a;
+  --line:rgba(255,255,255,0.14);
 
-    --chip-bg: rgba(243, 244, 246, 0.10);
-    --chip-text: #f3f4f6;
+  --text:#e5e7eb;
+  --muted:#a1a1aa;
 
-    --sh-1: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.45);
-    --sh-2: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.55);
+  --chip:rgba(255,255,255,0.08);
 
-    --grad: linear-gradient(135deg, rgba(225, 29, 72, 0.22), rgba(56, 189, 248, 0.10));
-  }
+  --sh1:0 12px 30px rgba(0,0,0,0.45);
+  --sh2:0 18px 46px rgba(0,0,0,0.55);
+
+  --grad:linear-gradient(135deg, rgba(225,29,72,0.22), rgba(59,130,246,0.14));
 }
 
-/* ---------- Base reset ---------- */
-* {
-  box-sizing: border-box;
+/* ======================
+   3) Base
+   ====================== */
+html{ font-size:16px; }
+
+body{
+  margin:0;
+  font-family:var(--font);
+  font-size:var(--fs1);
+  line-height:var(--lh);
+  word-spacing:var(--ws);
+  background:#ffffff; /* fallback */
+  color:#111827;      /* fallback */
 }
 
-html {
-  font-size: 16px;
+/* The real themed background is on #page */
+#page{
+  min-height:100vh;
+  background:var(--bg);
+  color:var(--text);
 }
 
-body {
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: var(--fs-1);
-  line-height: var(--lh-normal);
-  letter-spacing: var(--ls-normal);
-  color: var(--text);
-  background: var(--bg);
-  background-image: var(--grad);
-  background-attachment: fixed;
+/* Make common text always use theme colors */
+#page h1,#page h2,#page h3,#page h4,
+#page p,#page label,#page li,#page span,#page strong{
+  color:var(--text);
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--r-2);
+img{ max-width:100%; height:auto; display:block; border:0; }
+
+.vh{
+  position:absolute;
+  left:-9999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
 }
 
-a {
-  color: var(--brand);
-  text-decoration: none;
+.wrap{ max-width:72rem; margin:0 auto; padding:var(--s4); }
+
+/* ======================
+   4) Skip link
+   ====================== */
+.skip{ margin:0; padding:var(--s2); }
+.skip a{
+  position:absolute;
+  left:-9999px;
+  top:0;
+  background:var(--card);
+  color:var(--text);
+  padding:var(--s2) var(--s3);
+  border-radius:var(--r1);
+  box-shadow:var(--sh1);
+}
+.skip a:focus{ left:var(--s2); top:var(--s2); outline:none; }
+
+/* ======================
+   5) Header + nav
+   ====================== */
+#header{
+  background:var(--grad);
+  border-bottom:1px solid var(--line);
 }
 
-a:hover,
-a:focus {
-  text-decoration: underline;
+.head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--s3);
 }
 
-p {
-  margin: 0 0 var(--sp-4) 0;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:var(--s2);
 }
 
-ul {
-  margin: 0 0 var(--sp-4) 0;
-  padding-left: 1.25rem;
+.logo{
+  background:var(--card);
+  padding:var(--s1);
+  border-radius:var(--r1);
+  box-shadow:var(--sh1);
 }
 
-/* ---------- Skip link (accessibility friendly without aria/role) ---------- */
-a[href="#main"] {
-  position: absolute;
-  left: -9999px;
-  top: 0.5rem;
-  padding: var(--sp-2) var(--sp-3);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--r-1);
-  box-shadow: var(--sh-1);
+.brand-text h1{ margin:0; font-size:var(--fs2); }
+.brand-text p{ margin:0; color:var(--muted); font-size:var(--fs0); }
+
+.nav-list{
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:flex;
+  gap:var(--s2);
+  flex-wrap:wrap;
 }
 
-a[href="#main"]:focus {
-  left: 0.75rem;
-  z-index: 50;
+.nav-list a{
+  display:inline-block;
+  padding:var(--s1) var(--s3);
+  border:1px solid var(--line);
+  border-radius:var(--r2);
+  background:var(--card);
+  color:var(--text);
+  text-decoration:none;
+  box-shadow:var(--sh1);
+  transition:transform 180ms ease, box-shadow 180ms ease;
+}
+.nav-list a:hover,
+.nav-list a:focus{
+  transform:translateY(-1px);
+  box-shadow:var(--sh2);
+  outline:none;
 }
 
-/* ---------- Page container ---------- */
-#main {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: var(--sp-6) var(--sp-4) var(--sp-7);
+/* Theme button */
+.theme-btn{
+  display:inline-block;
+  padding:var(--s1) var(--s3);
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--text);
+  cursor:pointer;
+  user-select:none;
+  box-shadow:var(--sh1);
+  transition:transform 180ms ease, box-shadow 180ms ease;
+}
+.theme-btn:hover,
+.theme-btn:focus{ transform:translateY(-1px); box-shadow:var(--sh2); outline:none; }
+
+#theme-toggle:checked ~ #page .theme-btn:after{ content:"  (dark)"; color:var(--muted); }
+#theme-toggle:not(:checked) ~ #page .theme-btn:after{ content:"  (light)"; color:var(--muted); }
+
+/* ======================
+   6) Cards + animation
+   ====================== */
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--r2);
+  box-shadow:var(--sh1);
+  padding:var(--s4);
+  margin-bottom:var(--s4);
+  animation:up 520ms ease both;
 }
 
-/* ---------- Header block (your first big top area) ---------- */
-body > div {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: var(--sp-6) var(--sp-4) var(--sp-4);
+@keyframes up{
+  from{ opacity:0; transform:translateY(8px); }
+  to{ opacity:1; transform:translateY(0); }
 }
 
-body > div > p:first-child img {
-  width: min(12rem, 55vw);
-  height: auto;
-  border-radius: var(--r-2);
-  box-shadow: var(--sh-1);
+.media{
+  margin:0;
+  border-radius:var(--r2);
+  overflow:hidden;
+  box-shadow:var(--sh2);
+  border:1px solid var(--line);
 }
 
-h1 {
-  font-size: var(--fs-4);
-  line-height: var(--lh-tight);
-  letter-spacing: var(--ls-tight);
-  margin: var(--sp-3) 0 var(--sp-2);
+/* Dots */
+.dots{
+  margin:var(--s2) 0 0 0;
+  display:flex;
+  justify-content:center;
+  gap:var(--s1);
+}
+.dot{
+  width:0.55rem;
+  height:0.55rem;
+  border-radius:999px;
+  background:rgba(0,0,0,0.18);
+}
+#theme-toggle:checked ~ #page .dot{ background:rgba(255,255,255,0.18); }
+.dot.on{ background:var(--brand); }
+
+/* ======================
+   7) Search (no placeholder in XHTML strict)
+   ====================== */
+.search fieldset{ border:0; padding:0; margin:0; }
+
+.search-box{
+  margin:0;
+  display:flex;
+  align-items:center;
+  gap:var(--s2);
+  border:1px solid var(--line);
+  border-radius:var(--r2);
+  padding:var(--s2);
+  position:relative;
+  background:rgba(255,255,255,0.55);
 }
 
-h2 {
-  font-size: var(--fs-3);
-  line-height: var(--lh-tight);
-  margin: var(--sp-6) 0 var(--sp-3);
+#theme-toggle:checked ~ #page .search-box{
+  background:rgba(255,255,255,0.06);
 }
 
-h3 {
-  font-size: var(--fs-2);
-  margin: var(--sp-5) 0 var(--sp-2);
+.search-box input{
+  width:100%;
+  border:0;
+  background:transparent;
+  outline:none;
+  color:var(--text);
+  font-family:var(--font);
+  font-size:var(--fs1);
+  padding:0;
 }
 
-/* ---------- Top menu list ---------- */
-body > div ul {
-  list-style: none;
-  padding: 0;
-  margin: var(--sp-3) 0 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--sp-2);
+/* fake placeholder */
+.hint{
+  position:absolute;
+  left:2.4rem;
+  color:var(--muted);
+  pointer-events:none;
+  transition:opacity 160ms ease;
+}
+.search-box input:focus + .hint,
+.search-box input:hover + .hint{ opacity:0.55; }
+
+.row{
+  margin:var(--s2) 0 0 0;
+  display:flex;
+  gap:var(--s2);
+  flex-wrap:wrap;
 }
 
-body > div ul li {
-  margin: 0;
-}
-
-body > div ul a {
-  display: inline-block;
-  padding: var(--sp-2) var(--sp-3);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  box-shadow: var(--sh-1);
-  transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease);
-}
-
-body > div ul a:hover,
-body > div ul a:focus {
-  transform: translateY(-2px);
-  box-shadow: var(--sh-2);
-}
-
-/* ---------- “Screen cards” look ---------- */
-#screen-a,
-#screen-b,
-#screen-c {
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid var(--line);
-  border-radius: var(--r-3);
-  box-shadow: var(--sh-1);
-  padding: var(--sp-6);
-  margin: var(--sp-6) 0;
-  backdrop-filter: blur(10px);
-  animation: riseIn 420ms var(--ease) both;
-}
-
-@media (prefers-color-scheme: dark) {
-  #screen-a,
-  #screen-b,
-  #screen-c {
-    background: rgba(18, 18, 26, 0.70);
-  }
-}
-
-@keyframes riseIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ---------- Forms ---------- */
-form {
-  margin: 0 0 var(--sp-5);
-}
-
-fieldset {
-  border: 1px solid var(--line);
-  border-radius: var(--r-2);
-  padding: var(--sp-5);
-  background: var(--surface);
-  box-shadow: var(--sh-1);
-}
-
-legend {
-  padding: 0 var(--sp-2);
-  font-weight: 700;
-}
-
-label {
-  font-weight: 600;
-}
-
-input[type="text"],
-select {
-  width: min(30rem, 100%);
-  padding: var(--sp-3) var(--sp-4);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--surface);
-  color: var(--text);
-  outline: none;
-  transition: box-shadow var(--dur-2) var(--ease), transform var(--dur-2) var(--ease);
-}
-
-input[type="text"]:focus,
-select:focus {
-  box-shadow: 0 0 0 0.25rem rgba(225, 29, 72, 0.22);
-}
-
+/* buttons */
 input[type="submit"],
-input[type="reset"] {
-  padding: var(--sp-3) var(--sp-5);
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  color: var(--text);
-  cursor: pointer;
-  transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease), background var(--dur-2) var(--ease);
+input[type="reset"],
+.btn{
+  font-family:var(--font);
+  font-size:var(--fs1);
+  padding:var(--s1) var(--s3);
+  border-radius:var(--r2);
+  border:1px solid var(--line);
+  background:var(--bg);
+  color:var(--text);
+  cursor:pointer;
+  text-decoration:none;
+  transition:transform 180ms ease;
 }
 
-input[type="submit"] {
-  background: linear-gradient(135deg, var(--brand), var(--brand-2));
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.18);
+input[type="submit"]{
+  background:var(--brand);
+  border-color:transparent;
+  color:#ffffff;
 }
 
 input[type="submit"]:hover,
 input[type="submit"]:focus,
 input[type="reset"]:hover,
-input[type="reset"]:focus {
-  transform: translateY(-2px);
-  box-shadow: var(--sh-2);
+input[type="reset"]:focus,
+.btn:hover,
+.btn:focus{
+  transform:translateY(-1px);
+  outline:none;
 }
 
-/* ---------- Inline SVG icon ---------- */
-.icon {
-  width: 1.25rem;
-  height: 1.25rem;
-  vertical-align: middle;
-  fill: currentColor;
-  color: var(--muted);
-  margin-right: var(--sp-2);
+/* ======================
+   8) Grid + tabs + chips
+   ====================== */
+.grid{ display:grid; grid-template-columns:1fr 1fr; gap:var(--s3); }
+.wide{ grid-column:1 / -1; }
+
+.tabs, .chips{
+  margin:var(--s2) 0 0 0;
+  padding:0;
+  list-style:none;
+  display:flex;
+  gap:var(--s2);
+  overflow-x:auto;
+  white-space:nowrap;
 }
 
-/* ---------- Chip row (horizontal, like your screenshots) ---------- */
-.chip-row {
-  display: flex;
-  gap: var(--sp-2);
-  overflow-x: auto;
-  padding: var(--sp-2);
-  border-radius: var(--r-2);
-  background: rgba(18, 18, 26, 0.03);
-  border: 1px solid var(--line);
-  scroll-snap-type: x mandatory;
+.tabs a, .chips a{
+  display:inline-block;
+  padding:var(--s1) var(--s3);
+  border-radius:var(--r2);
+  border:1px solid var(--line);
+  background:var(--chip);
+  color:var(--text);
+  text-decoration:none;
+  transition:transform 180ms ease;
+}
+.tabs a:hover, .tabs a:focus,
+.chips a:hover, .chips a:focus{
+  transform:translateY(-1px);
+  outline:none;
 }
 
-.chip-row > input[type="radio"] {
-  position: absolute;
-  left: -9999px;
+/* ======================
+   9) Filter + list
+   ====================== */
+.filter form fieldset{
+  border:1px solid var(--line);
+  border-radius:var(--r2);
+  background:var(--bg);
+  padding:var(--s3);
 }
 
-.chip-row > label {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--sp-2);
-  padding: var(--sp-2) var(--sp-4);
-  border-radius: 999px;
-  background: var(--chip-bg);
-  color: var(--chip-text);
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease), background var(--dur-2) var(--ease);
+select{
+  width:100%;
+  padding:var(--s1);
+  border-radius:var(--r2);
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--text);
 }
 
-.chip-row > label:hover,
-.chip-row > label:focus {
-  transform: translateY(-1px);
-  box-shadow: var(--sh-1);
+.list{ display:grid; grid-template-columns:1fr; gap:var(--s2); }
+
+.item{
+  display:flex;
+  gap:var(--s2);
+  align-items:center;
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:var(--r2);
+  padding:var(--s2);
+  box-shadow:var(--sh1);
+  transition:transform 180ms ease, box-shadow 180ms ease;
 }
+.item:hover{ transform:translateY(-1px); box-shadow:var(--sh2); }
 
-.chip-row > input[type="radio"]:checked + label {
-  background: linear-gradient(135deg, var(--brand), var(--brand-2));
-  color: #ffffff;
-  box-shadow: var(--sh-2);
-  animation: chipPop 240ms var(--ease) both;
-}
+.thumb{ width:10rem; border-radius:var(--r1); border:1px solid var(--line); }
+.rate{ margin:0; color:var(--muted); }
+.tag{ margin:0; color:var(--muted); font-size:var(--fs0); }
 
-@keyframes chipPop {
-  from { transform: scale(0.98); }
-  to { transform: scale(1); }
-}
+.links{ margin-top:var(--s3); color:var(--muted); }
+.links a{ color:var(--brand); text-decoration:none; }
+.links a:hover, .links a:focus{ text-decoration:underline; }
 
-/* ---------- Listing cards (buildable for future CSS step) ---------- */
-.list-grid {
-  display: grid;
-  gap: var(--sp-4);
-  grid-template-columns: 1fr;
-}
+.groups{ display:grid; gap:var(--s3); }
 
-.list-card {
-  display: grid;
-  grid-template-columns: 8.5rem 1fr;
-  gap: var(--sp-4);
-  padding: var(--sp-4);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--r-2);
-  box-shadow: var(--sh-1);
-  transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease);
-}
+/* ======================
+   10) Responsive: 3 states
+   ====================== */
+/* mobile portrait = default */
 
-.list-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--sh-2);
-}
-
-.list-card img {
-  width: 100%;
-  height: 6.25rem;
-  object-fit: cover;
-  border-radius: var(--r-2);
-}
-
-.list-card .title {
-  font-weight: 800;
-  font-size: var(--fs-2);
-  margin: 0 0 var(--sp-2);
-}
-
-.list-card .meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--sp-2) var(--sp-3);
-  color: var(--muted);
-  font-size: var(--fs-0);
-}
-
-/* ---------- Make screenshots look like phone UI blocks ---------- */
-#screen-a img,
-#screen-b img,
-#screen-c img {
-  border: 1px solid var(--line);
-  box-shadow: var(--sh-2);
-}
-
-/* ---------- Responsive (3 modes) ---------- */
-
-/* 1) Mobile portrait */
-@media (max-width: 480px) {
-  body > div {
-    padding: var(--sp-5) var(--sp-4) var(--sp-3);
+@media screen and (min-width:600px){
+  .filter form fieldset{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:var(--s2);
+    align-items:end;
   }
-
-  #main {
-    padding: var(--sp-5) var(--sp-4) var(--sp-7);
-  }
-
-  #screen-a,
-  #screen-b,
-  #screen-c {
-    padding: var(--sp-5);
-  }
-
-  fieldset {
-    padding: var(--sp-4);
-  }
-
-  input[type="text"],
-  select {
-    width: 100%;
-  }
+  .filter .row{ grid-column:1 / -1; }
 }
 
-/* 2) Mobile landscape */
-@media (max-width: 900px) and (orientation: landscape) {
-  #screen-a,
-  #screen-b,
-  #screen-c {
-    padding: var(--sp-5);
-  }
-
-  body > div ul {
-    gap: var(--sp-1);
-  }
-
-  body > div ul a {
-    padding: var(--sp-2) var(--sp-3);
-  }
+@media screen and (min-width:1024px){
+  .list{ grid-template-columns:1fr 1fr; }
 }
-
-/* 3) Desktop */
-@media (min-width: 900px) {
-  /* Screens side breathing */
-  #main {
-    padding-left: var(--sp-6);
-    padding-right: var(--sp-6);
-  }
-
-  /* Better reading width inside sections */
-  #screen-a p,
-  #screen-b p,
-  #screen-c p {
-    max-width: 60ch;
-  }
-
-  /* Example grid for future: if you add .list-grid + .list-card markup later */
-  .list-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
