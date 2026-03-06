@@ -4,10 +4,11 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; object-src 'self';" />
 
     <title>bon délice - discover</title>
 
-    <meta name="description" content="Bon Délice: нүүр, ангилал, ресторан жагсаалт (түгээмэл/сүүлд нэмэгдсэн), улс/төрлөөр шүүх, хайлт (HTML/CSS demo)." />
+    <meta name="description" content="Bon Délice: нүүр, ангилал, ресторан жагсаалт, улс төрлөөр шүүх, хайлт." />
     <meta name="keywords" content="bon délice, ресторан, кафе, паб, хайлт, шүүлт, эрэмбэлэлт" />
     <meta name="robots" content="index, follow" />
 
@@ -21,7 +22,6 @@
 
     <p class="skip"><a href="#main">үндсэн агуулга руу шилжих</a></p>
 
-    <!-- IMPORTANT: #theme-toggle must be a sibling BEFORE #page for CSS ~ selector to work -->
     <div id="shell">
       <input type="checkbox" id="theme-toggle" name="theme-toggle" value="1" />
 
@@ -32,7 +32,7 @@
               <img class="logo" src="assets/img/logo.png" alt="bon délice лого" width="120" height="88" />
               <div class="brand-text">
                 <h1>bon délice</h1>
-                <p>байршилд суурилсан ресторан, кафе, паб хайлт ба эрэмбэлэлт</p>
+                <p>байршилд суурилсан ресторан, кафе, паб хайлт</p>
               </div>
             </div>
 
@@ -53,7 +53,6 @@
 
         <div id="app">
           <div id="main" class="wrap">
-            <!-- A) Home -->
             <div id="screen-a" class="card">
               <h2>нүүр</h2>
 
@@ -61,29 +60,6 @@
                 таны одоогийн байршил: <strong>bayanzurkh district, 26 street</strong>
               </p>
 
-              <form action="#screen-c" method="get" class="search">
-                <fieldset>
-                  <legend class="vh">хайлт</legend>
-
-                  <p class="search-box">
-                    <!-- SVG icon (XHTML Strict safe): external SVG via object -->
-                    <object class="icon" data="assets/icons/search.svg" type="image/svg+xml">
-                      <span class="vh">хайх</span>
-                    </object>
-
-                    <label for="q-home" class="vh">хайх</label>
-                    <input type="text" id="q-home" name="q" value="" />
-                    <span class="hint">Хайх…</span>
-                  </p>
-
-                  <p class="row">
-                    <input type="submit" value="хайх" />
-                    <a class="btn" href="#screen-c">chips</a>
-                  </p>
-                </fieldset>
-              </form>
-
-              <p class="cap"><a href="#screen-b">баннер</a></p>
               <p class="media">
                 <img src="assets/img/banner.png" alt="нүүр хуудасны баннер зураг" width="900" height="240" />
               </p>
@@ -122,14 +98,8 @@
               </p>
             </div>
 
-            <!-- B) Restaurant list -->
             <div id="screen-b" class="card">
               <h2>ресторан</h2>
-
-              <ul class="tabs">
-                <li><a href="#popular">түгээмэл</a></li>
-                <li><a href="#new">сүүлд нэмэгдсэн</a></li>
-              </ul>
 
               <ul class="chips">
                 <li><a href="#korean">солонгос</a></li>
@@ -262,7 +232,6 @@
               </p>
             </div>
 
-            <!-- C) Search -->
             <div id="screen-c" class="card">
               <h2>хайлт</h2>
 
@@ -287,8 +256,6 @@
                 </fieldset>
               </form>
 
-              <h3>chips</h3>
-
               <div class="groups">
                 <div class="group">
                   <h4>ресторан</h4>
@@ -303,7 +270,7 @@
 
                 <div class="group">
                   <h4>кафе</h4>
-                  <ul class="chips">
+                  <ul class="chips chips-wrap">
                     <li><a href="#screen-b">кофе шоп</a></li>
                     <li><a href="#screen-b">бөмбөлөгтэй цай</a></li>
                     <li><a href="#screen-b">өглөөний цай</a></li>
@@ -312,7 +279,7 @@
 
                 <div class="group">
                   <h4>паб</h4>
-                  <ul class="chips">
+                  <ul class="chips chips-wrap">
                     <li><a href="#screen-b">паб</a></li>
                     <li><a href="#screen-b">лоунж</a></li>
                     <li><a href="#screen-b">клуб</a></li>
