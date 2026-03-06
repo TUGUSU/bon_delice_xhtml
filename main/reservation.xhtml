@@ -44,38 +44,38 @@
     </div>
 
     <div class="hero-row">
-      <div class="hero-main">
+      <a class="hero-main gallery-trigger" href="#gallery-1">
         <img src="assets/img/hero-main.jpg" alt="Yuna restaurant main hall" />
-        <span class="photo-badge"><span class="camera-icon">&#128247;</span>120</span>
-      </div>
+        <span class="photo-badge"><span class="camera-icon">&#128247;</span>4</span>
+      </a>
 
       <div class="hero-side">
-        <div class="gallery-card">
+        <a class="gallery-card gallery-trigger" href="#gallery-2">
           <img src="assets/img/interior.jpg" alt="Interior" />
           <div class="gallery-overlay">
             <span class="gallery-title">Interior</span>
-            <span class="gallery-count">38</span>
+            <span class="gallery-count">1</span>
           </div>
-        </div>
+        </a>
 
-        <div class="gallery-card">
+        <a class="gallery-card gallery-trigger" href="#gallery-3">
           <img src="assets/img/food.jpg" alt="Food" />
           <div class="gallery-overlay">
             <span class="gallery-title">Food</span>
-            <span class="gallery-count">33</span>
+            <span class="gallery-count">2</span>
           </div>
-        </div>
+        </a>
 
-        <div class="gallery-card menu-gallery">
+        <a class="gallery-card menu-gallery gallery-trigger" href="#gallery-4">
           <div class="menu-grid">
             <img src="assets/img/menu-left.jpg" alt="Menu photo left" />
             <img src="assets/img/menu-right.jpg" alt="Menu photo right" />
           </div>
           <div class="gallery-overlay">
             <span class="gallery-title">Menu</span>
-            <span class="gallery-count">4</span>
+            <span class="gallery-count">3</span>
           </div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -148,6 +148,71 @@
     </div>
   </div>
 
+  <div id="gallery-1" class="gallery-lightbox">
+    <a class="gallery-backdrop" href="#page"><span class="visually-hidden">Close gallery</span></a>
+    <div class="gallery-dialog">
+      <a class="gallery-close" href="#page" title="Close">&#215;</a>
+      <a class="gallery-arrow gallery-arrow-left" href="#gallery-5" title="Previous">&#8249;</a>
+      <div class="gallery-stage">
+        <img src="assets/img/hero-main.jpg" alt="Yuna restaurant main hall" />
+      </div>
+      <a class="gallery-arrow gallery-arrow-right" href="#gallery-2" title="Next">&#8250;</a>
+      <div class="gallery-caption">Main Hall</div>
+    </div>
+  </div>
+
+  <div id="gallery-2" class="gallery-lightbox">
+    <a class="gallery-backdrop" href="#page"><span class="visually-hidden">Close gallery</span></a>
+    <div class="gallery-dialog">
+      <a class="gallery-close" href="#page" title="Close">&#215;</a>
+      <a class="gallery-arrow gallery-arrow-left" href="#gallery-1" title="Previous">&#8249;</a>
+      <div class="gallery-stage">
+        <img src="assets/img/interior.jpg" alt="Interior" />
+      </div>
+      <a class="gallery-arrow gallery-arrow-right" href="#gallery-3" title="Next">&#8250;</a>
+      <div class="gallery-caption">Interior</div>
+    </div>
+  </div>
+
+  <div id="gallery-3" class="gallery-lightbox">
+    <a class="gallery-backdrop" href="#page"><span class="visually-hidden">Close gallery</span></a>
+    <div class="gallery-dialog">
+      <a class="gallery-close" href="#page" title="Close">&#215;</a>
+      <a class="gallery-arrow gallery-arrow-left" href="#gallery-2" title="Previous">&#8249;</a>
+      <div class="gallery-stage">
+        <img src="assets/img/food.jpg" alt="Food" />
+      </div>
+      <a class="gallery-arrow gallery-arrow-right" href="#gallery-4" title="Next">&#8250;</a>
+      <div class="gallery-caption">Food</div>
+    </div>
+  </div>
+
+  <div id="gallery-4" class="gallery-lightbox">
+    <a class="gallery-backdrop" href="#page"><span class="visually-hidden">Close gallery</span></a>
+    <div class="gallery-dialog">
+      <a class="gallery-close" href="#page" title="Close">&#215;</a>
+      <a class="gallery-arrow gallery-arrow-left" href="#gallery-3" title="Previous">&#8249;</a>
+      <div class="gallery-stage">
+        <img src="assets/img/menu-left.jpg" alt="Menu photo left" />
+      </div>
+      <a class="gallery-arrow gallery-arrow-right" href="#gallery-5" title="Next">&#8250;</a>
+      <div class="gallery-caption">Menu</div>
+    </div>
+  </div>
+
+  <div id="gallery-5" class="gallery-lightbox">
+    <a class="gallery-backdrop" href="#page"><span class="visually-hidden">Close gallery</span></a>
+    <div class="gallery-dialog">
+      <a class="gallery-close" href="#page" title="Close">&#215;</a>
+      <a class="gallery-arrow gallery-arrow-left" href="#gallery-4" title="Previous">&#8249;</a>
+      <div class="gallery-stage">
+        <img src="assets/img/menu-right.jpg" alt="Menu photo right" />
+      </div>
+      <a class="gallery-arrow gallery-arrow-right" href="#gallery-1" title="Next">&#8250;</a>
+      <div class="gallery-caption">Menu Detail</div>
+    </div>
+  </div>
+
   <div id="booking-modal" class="booking-modal">
     <a class="booking-modal-backdrop" href="#page"><span class="visually-hidden">Close booking modal</span></a>
 
@@ -158,48 +223,113 @@
         <h2>Ширээ болон цагийн хуваар</h2>
 
         <form class="booking-form" action="#" method="get">
-          <div class="date-selector">
-            <input class="booking-date" type="radio" name="booking-date" id="booking-date-13" checked="checked" />
-            <label class="date-chip" for="booking-date-13">
-              <span class="date-number">13</span>
-              <span class="date-day">Өнөөдөр</span>
-            </label>
+          <div class="date-selector-carousel">
+            <input class="date-page" type="radio" name="date-page" id="date-page-1" checked="checked" />
+            <input class="date-page" type="radio" name="date-page" id="date-page-2" />
+            <input class="date-page" type="radio" name="date-page" id="date-page-3" />
+            <input class="date-page" type="radio" name="date-page" id="date-page-4" />
+            <input class="date-page" type="radio" name="date-page" id="date-page-5" />
 
-            <input class="booking-date" type="radio" name="booking-date" id="booking-date-14" />
-            <label class="date-chip" for="booking-date-14">
-              <span class="date-number">14</span>
-              <span class="date-day">Бямба</span>
-            </label>
+            <div class="date-nav date-nav-left">
+              <label class="date-arrow date-arrow-left prev-1 disabled" for="date-page-1"><span>&#8249;</span></label>
+              <label class="date-arrow date-arrow-left prev-2" for="date-page-1"><span>&#8249;</span></label>
+              <label class="date-arrow date-arrow-left prev-3" for="date-page-2"><span>&#8249;</span></label>
+              <label class="date-arrow date-arrow-left prev-4" for="date-page-3"><span>&#8249;</span></label>
+              <label class="date-arrow date-arrow-left prev-5" for="date-page-4"><span>&#8249;</span></label>
+            </div>
 
-            <input class="booking-date" type="radio" name="booking-date" id="booking-date-15" />
-            <label class="date-chip" for="booking-date-15">
-              <span class="date-number">15</span>
-              <span class="date-day">Ням</span>
-            </label>
+            <div class="date-selector-window">
+              <div class="date-track">
+                <div class="date-week date-week-1">
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-1" checked="checked" />
+                  <label class="date-chip" for="booking-date-1"><span class="date-number">1</span><span class="date-day">Даваа</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-2" />
+                  <label class="date-chip" for="booking-date-2"><span class="date-number">2</span><span class="date-day">Мягмар</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-3" />
+                  <label class="date-chip" for="booking-date-3"><span class="date-number">3</span><span class="date-day">Лхагва</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-4" />
+                  <label class="date-chip" for="booking-date-4"><span class="date-number">4</span><span class="date-day">Пүрэв</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-5" />
+                  <label class="date-chip" for="booking-date-5"><span class="date-number">5</span><span class="date-day">Баасан</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-6" />
+                  <label class="date-chip" for="booking-date-6"><span class="date-number">6</span><span class="date-day">Бямба</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-7" />
+                  <label class="date-chip" for="booking-date-7"><span class="date-number">7</span><span class="date-day">Ням</span></label>
+                </div>
 
-            <input class="booking-date" type="radio" name="booking-date" id="booking-date-16" />
-            <label class="date-chip" for="booking-date-16">
-              <span class="date-number">16</span>
-              <span class="date-day">Даваа</span>
-            </label>
+                <div class="date-week date-week-2">
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-8" />
+                  <label class="date-chip" for="booking-date-8"><span class="date-number">8</span><span class="date-day">Даваа</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-9" />
+                  <label class="date-chip" for="booking-date-9"><span class="date-number">9</span><span class="date-day">Мягмар</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-10" />
+                  <label class="date-chip" for="booking-date-10"><span class="date-number">10</span><span class="date-day">Лхагва</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-11" />
+                  <label class="date-chip" for="booking-date-11"><span class="date-number">11</span><span class="date-day">Пүрэв</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-12" />
+                  <label class="date-chip" for="booking-date-12"><span class="date-number">12</span><span class="date-day">Баасан</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-13" />
+                  <label class="date-chip" for="booking-date-13"><span class="date-number">13</span><span class="date-day">Бямба</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-14" />
+                  <label class="date-chip" for="booking-date-14"><span class="date-number">14</span><span class="date-day">Ням</span></label>
+                </div>
 
-            <input class="booking-date" type="radio" name="booking-date" id="booking-date-17" />
-            <label class="date-chip" for="booking-date-17">
-              <span class="date-number">17</span>
-              <span class="date-day">Мягмар</span>
-            </label>
+                <div class="date-week date-week-3">
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-15" />
+                  <label class="date-chip" for="booking-date-15"><span class="date-number">15</span><span class="date-day">Даваа</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-16" />
+                  <label class="date-chip" for="booking-date-16"><span class="date-number">16</span><span class="date-day">Мягмар</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-17" />
+                  <label class="date-chip" for="booking-date-17"><span class="date-number">17</span><span class="date-day">Лхагва</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-18" />
+                  <label class="date-chip" for="booking-date-18"><span class="date-number">18</span><span class="date-day">Пүрэв</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-19" />
+                  <label class="date-chip" for="booking-date-19"><span class="date-number">19</span><span class="date-day">Баасан</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-20" />
+                  <label class="date-chip" for="booking-date-20"><span class="date-number">20</span><span class="date-day">Бямба</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-21" />
+                  <label class="date-chip" for="booking-date-21"><span class="date-number">21</span><span class="date-day">Ням</span></label>
+                </div>
 
-            <input class="booking-date" type="radio" name="booking-date" id="booking-date-18" />
-            <label class="date-chip" for="booking-date-18">
-              <span class="date-number">18</span>
-              <span class="date-day">Пүрэв</span>
-            </label>
+                <div class="date-week date-week-4">
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-22" />
+                  <label class="date-chip" for="booking-date-22"><span class="date-number">22</span><span class="date-day">Даваа</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-23" />
+                  <label class="date-chip" for="booking-date-23"><span class="date-number">23</span><span class="date-day">Мягмар</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-24" />
+                  <label class="date-chip" for="booking-date-24"><span class="date-number">24</span><span class="date-day">Лхагва</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-25" />
+                  <label class="date-chip" for="booking-date-25"><span class="date-number">25</span><span class="date-day">Пүрэв</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-26" />
+                  <label class="date-chip" for="booking-date-26"><span class="date-number">26</span><span class="date-day">Баасан</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-27" />
+                  <label class="date-chip" for="booking-date-27"><span class="date-number">27</span><span class="date-day">Бямба</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-28" />
+                  <label class="date-chip" for="booking-date-28"><span class="date-number">28</span><span class="date-day">Ням</span></label>
+                </div>
 
-            <input class="booking-date" type="radio" name="booking-date" id="booking-date-19" />
-            <label class="date-chip" for="booking-date-19">
-              <span class="date-number">19</span>
-              <span class="date-day">Лхагва</span>
-            </label>
+                <div class="date-week date-week-5">
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-29" />
+                  <label class="date-chip" for="booking-date-29"><span class="date-number">29</span><span class="date-day">Даваа</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-30" />
+                  <label class="date-chip" for="booking-date-30"><span class="date-number">30</span><span class="date-day">Мягмар</span></label>
+                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-31" />
+                  <label class="date-chip" for="booking-date-31"><span class="date-number">31</span><span class="date-day">Лхагва</span></label>
+                  <span class="date-chip date-chip-empty"><span class="date-number">&nbsp;</span><span class="date-day">&nbsp;</span></span>
+                  <span class="date-chip date-chip-empty"><span class="date-number">&nbsp;</span><span class="date-day">&nbsp;</span></span>
+                  <span class="date-chip date-chip-empty"><span class="date-number">&nbsp;</span><span class="date-day">&nbsp;</span></span>
+                  <span class="date-chip date-chip-empty"><span class="date-number">&nbsp;</span><span class="date-day">&nbsp;</span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="date-nav date-nav-right">
+              <label class="date-arrow date-arrow-right next-1" for="date-page-2"><span>&#8250;</span></label>
+              <label class="date-arrow date-arrow-right next-2" for="date-page-3"><span>&#8250;</span></label>
+              <label class="date-arrow date-arrow-right next-3" for="date-page-4"><span>&#8250;</span></label>
+              <label class="date-arrow date-arrow-right next-4" for="date-page-5"><span>&#8250;</span></label>
+              <label class="date-arrow date-arrow-right next-5 disabled" for="date-page-5"><span>&#8250;</span></label>
+            </div>
           </div>
 
           <div class="table-selector">
@@ -251,11 +381,32 @@
           </div>
 
           <div class="booking-modal-footer">
-            <button type="button" class="booking-submit">ЗАХИАЛАХ</button>
+            <a class="booking-submit" href="#booking-success">ЗАХИАЛАХ</a>
           </div>
         </form>
       </div>
     </div>
   </div>
+
+  <div id="booking-success" class="success-modal">
+    <a class="booking-modal-backdrop" href="#page"><span class="visually-hidden">Close reservation success modal</span></a>
+
+    <div class="success-modal-dialog">
+      <a class="booking-close" href="#page" title="Close">&#215;</a>
+
+      <div class="success-modal-body">
+        <div class="success-icon">&#10003;</div>
+        <h2>Thank you for reservation</h2>
+        <p class="success-copy">Таны захиалгыг хүлээн авлаа.</p>
+        <p class="success-copy">Таны цаг 5-ны өдрийн <strong>14:00 цагаас 15:00 цагийн хооронд</strong> Yuna restaurant-д <strong>ширээ 3</strong> захиалагдлаа.</p>
+        <p class="success-copy success-copy-last">Баярлалаа.</p>
+
+        <div class="success-actions">
+          <a class="success-button" href="#page">БУЦАХ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
