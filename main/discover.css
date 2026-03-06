@@ -1,29 +1,21 @@
-/* bon délice - discover.css (CSS only)
-   - DRY custom properties
-   - typography (Монгол: word/line spacing)
-   - gradient, shadow, radius
-   - transition + animation
-   - grid + flex + responsive (3 breakpoints)
-   - dark/light toggle (no JS)
-*/
+/* bon délice - discover.css
+   Custom properties + theme toggle (no JS) + responsive (3 breakpoints) */
 
-/* ======================
-   1) Tokens (Light default)
-   ====================== */
 :root{
   --font:"Noto Sans", Arial, sans-serif;
 
   --fs0:0.9rem;
   --fs1:1rem;
-  --fs2:1.4rem;
+  --fs2:1.45rem;
 
-  --lh:1.55;
+  --lh:1.6;
   --ws:0.08em;
 
   --s1:0.4rem;
   --s2:0.7rem;
   --s3:1rem;
   --s4:1.4rem;
+  --s5:2rem;
 
   --r1:0.8rem;
   --r2:1.2rem;
@@ -44,18 +36,6 @@
   --grad:linear-gradient(135deg, rgba(225,29,72,0.10), rgba(59,130,246,0.10));
 }
 
-/* ======================
-   2) Dark mode (CSS only)
-   We switch variables on #page (wrapper)
-   ====================== */
-#theme-toggle{
-  position:absolute;
-  left:-9999px;
-  width:1px;
-  height:1px;
-  overflow:hidden;
-}
-
 #theme-toggle:checked ~ #page{
   --bg:#0b0f19;
   --card:#0f172a;
@@ -72,9 +52,6 @@
   --grad:linear-gradient(135deg, rgba(225,29,72,0.22), rgba(59,130,246,0.14));
 }
 
-/* ======================
-   3) Base
-   ====================== */
 html{ font-size:16px; }
 
 body{
@@ -83,20 +60,13 @@ body{
   font-size:var(--fs1);
   line-height:var(--lh);
   word-spacing:var(--ws);
-  background:#ffffff; /* fallback */
-  color:#111827;      /* fallback */
+  background:#ffffff;
+  color:#111827;
 }
 
-/* The real themed background is on #page */
 #page{
   min-height:100vh;
   background:var(--bg);
-  color:var(--text);
-}
-
-/* Make common text always use theme colors */
-#page h1,#page h2,#page h3,#page h4,
-#page p,#page label,#page li,#page span,#page strong{
   color:var(--text);
 }
 
@@ -111,11 +81,13 @@ img{ max-width:100%; height:auto; display:block; border:0; }
   overflow:hidden;
 }
 
-.wrap{ max-width:72rem; margin:0 auto; padding:var(--s4); }
+.wrap{
+  max-width:72rem;
+  margin:0 auto;
+  padding:var(--s4);
+}
 
-/* ======================
-   4) Skip link
-   ====================== */
+/* Skip link */
 .skip{ margin:0; padding:var(--s2); }
 .skip a{
   position:absolute;
@@ -129,9 +101,7 @@ img{ max-width:100%; height:auto; display:block; border:0; }
 }
 .skip a:focus{ left:var(--s2); top:var(--s2); outline:none; }
 
-/* ======================
-   5) Header + nav
-   ====================== */
+/* Header */
 #header{
   background:var(--grad);
   border-bottom:1px solid var(--line);
@@ -180,6 +150,7 @@ img{ max-width:100%; height:auto; display:block; border:0; }
   box-shadow:var(--sh1);
   transition:transform 180ms ease, box-shadow 180ms ease;
 }
+
 .nav-list a:hover,
 .nav-list a:focus{
   transform:translateY(-1px);
@@ -196,19 +167,21 @@ img{ max-width:100%; height:auto; display:block; border:0; }
   background:var(--card);
   color:var(--text);
   cursor:pointer;
-  user-select:none;
   box-shadow:var(--sh1);
   transition:transform 180ms ease, box-shadow 180ms ease;
 }
+
 .theme-btn:hover,
-.theme-btn:focus{ transform:translateY(-1px); box-shadow:var(--sh2); outline:none; }
+.theme-btn:focus{
+  transform:translateY(-1px);
+  box-shadow:var(--sh2);
+  outline:none;
+}
 
 #theme-toggle:checked ~ #page .theme-btn:after{ content:"  (dark)"; color:var(--muted); }
 #theme-toggle:not(:checked) ~ #page .theme-btn:after{ content:"  (light)"; color:var(--muted); }
 
-/* ======================
-   6) Cards + animation
-   ====================== */
+/* Cards + animation */
 .card{
   background:var(--card);
   border:1px solid var(--line);
@@ -248,9 +221,7 @@ img{ max-width:100%; height:auto; display:block; border:0; }
 #theme-toggle:checked ~ #page .dot{ background:rgba(255,255,255,0.18); }
 .dot.on{ background:var(--brand); }
 
-/* ======================
-   7) Search (no placeholder in XHTML strict)
-   ====================== */
+/* Search */
 .search fieldset{ border:0; padding:0; margin:0; }
 
 .search-box{
@@ -280,6 +251,14 @@ img{ max-width:100%; height:auto; display:block; border:0; }
   padding:0;
 }
 
+/* Inline SVG object icon */
+.icon{
+  width:18px;
+  height:18px;
+  display:block;
+  flex:0 0 18px;
+}
+
 /* fake placeholder */
 .hint{
   position:absolute;
@@ -298,7 +277,7 @@ img{ max-width:100%; height:auto; display:block; border:0; }
   flex-wrap:wrap;
 }
 
-/* buttons */
+/* Buttons */
 input[type="submit"],
 input[type="reset"],
 .btn{
@@ -330,11 +309,9 @@ input[type="reset"]:focus,
   outline:none;
 }
 
-/* ======================
-   8) Grid + tabs + chips
-   ====================== */
-.grid{ display:grid; grid-template-columns:1fr 1fr; gap:var(--s3); }
-.wide{ grid-column:1 / -1; }
+/* Grid + tabs + chips */
+.grid{ display:grid; grid-template-columns:1fr; gap:var(--s3); }
+.wide{ grid-column:auto; }
 
 .tabs, .chips{
   margin:var(--s2) 0 0 0;
@@ -356,15 +333,14 @@ input[type="reset"]:focus,
   text-decoration:none;
   transition:transform 180ms ease;
 }
+
 .tabs a:hover, .tabs a:focus,
 .chips a:hover, .chips a:focus{
   transform:translateY(-1px);
   outline:none;
 }
 
-/* ======================
-   9) Filter + list
-   ====================== */
+/* Filter + list */
 .filter form fieldset{
   border:1px solid var(--line);
   border-radius:var(--r2);
@@ -394,9 +370,15 @@ select{
   box-shadow:var(--sh1);
   transition:transform 180ms ease, box-shadow 180ms ease;
 }
+
 .item:hover{ transform:translateY(-1px); box-shadow:var(--sh2); }
 
-.thumb{ width:10rem; border-radius:var(--r1); border:1px solid var(--line); }
+.thumb{
+  width:10rem;
+  border-radius:var(--r1);
+  border:1px solid var(--line);
+}
+
 .rate{ margin:0; color:var(--muted); }
 .tag{ margin:0; color:var(--muted); font-size:var(--fs0); }
 
@@ -406,12 +388,17 @@ select{
 
 .groups{ display:grid; gap:var(--s3); }
 
-/* ======================
-   10) Responsive: 3 states
-   ====================== */
-/* mobile portrait = default */
+/* ===== Responsive: 3 breakpoints (affects many sections) ===== */
 
-@media screen and (min-width:600px){
+/* 1) >= 480px: grid becomes 2 columns; header spacing improves */
+@media screen and (min-width:480px){
+  .wrap{ padding:var(--s5); }
+  .grid{ grid-template-columns:1fr 1fr; }
+  .wide{ grid-column:1 / -1; }
+}
+
+/* 2) >= 768px: filter layout + groups become 3 columns */
+@media screen and (min-width:768px){
   .filter form fieldset{
     display:grid;
     grid-template-columns:1fr 1fr 1fr;
@@ -419,8 +406,18 @@ select{
     align-items:end;
   }
   .filter .row{ grid-column:1 / -1; }
+  .groups{ grid-template-columns:1fr 1fr 1fr; }
 }
 
+/* 3) >= 1024px: restaurant list becomes 2 columns; nav tighter */
 @media screen and (min-width:1024px){
   .list{ grid-template-columns:1fr 1fr; }
+  .nav-list{ justify-content:flex-start; }
+}
+
+/* Chips inside the Search "groups" should WRAP (prevents overflow like "клуб") */
+.groups .chips{
+  flex-wrap:wrap;
+  white-space:normal;
+  overflow-x:visible;
 }
