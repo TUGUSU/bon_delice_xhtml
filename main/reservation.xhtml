@@ -5,103 +5,110 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>Yuna Restaurant</title>
-  <link rel="stylesheet" type="text/css" href="reservation.css" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-  <div id="page">
+  <div class="page">
     <div class="topbar">
-      <div class="location-chip">
-        <img class="location-pin" src="assets/img/pin.svg" alt="Location pin" />
-        <div class="location-copy">
-          <span class="location-label">Таны одоо байгаа байршил.</span>
-          <span class="location-value">Bayuzurkh district, 26 street</span>
+      <div class="current-location">
+        <img class="top-pin" src="assets/pin.svg" alt="Байршил" />
+        <div class="loc-copy">
+          <span class="loc-label">Таны одоо байгаа байршил.</span>
+          <span class="loc-value">Bayuzurkh district, 26 street</span>
         </div>
       </div>
 
       <a class="map-button" href="#">
-        <img src="assets/img/map.svg" alt="Map icon" />
+        <img src="assets/map.svg" alt="Газрын зураг" />
         <span>Газрын зураг</span>
       </a>
 
-      <a class="menu-button" href="#">
-        <span class="menu-line"></span>
-        <span class="menu-line"></span>
-        <span class="menu-line"></span>
+      <a class="menu-square" href="#">
+        <span class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
       </a>
 
-      <div class="search-bar">
-        <div class="search-input-wrap">
+      <div class="search-cluster">
+        <div class="search-field">
           <input type="text" value="Хайх..." />
         </div>
         <a class="search-button" href="#">
-          <img src="assets/img/search.svg" alt="Search icon" />
+          <img src="assets/search.svg" alt="Хайх" />
         </a>
       </div>
 
       <a class="profile-button" href="#">
-        <img src="assets/img/user.svg" alt="User icon" />
+        <img src="assets/user.svg" alt="Хэрэглэгч" />
       </a>
     </div>
 
-    <div class="hero-row">
+    <div class="hero-grid">
       <div class="hero-main">
-        <img src="assets/img/hero-main.jpg" alt="Yuna restaurant main hall" />
-        <span class="photo-badge"><span class="camera-icon">&#128247;</span>120</span>
+        <img src="assets/hero.jpg" alt="Yuna restaurant interior" />
+        <div class="photo-pill">
+          <span class="camera-icon"><span class="camera-lens"></span></span>
+          <span>120</span>
+        </div>
       </div>
 
       <div class="hero-side">
-        <div class="gallery-card">
-          <img src="assets/img/interior.jpg" alt="Interior" />
-          <div class="gallery-overlay">
-            <span class="gallery-title">Interior</span>
-            <span class="gallery-count">38</span>
+        <div class="thumb-card single">
+          <img src="assets/interior.jpg" alt="Interior" />
+          <div class="thumb-overlay">
+            <span>Interior</span>
+            <span>38</span>
           </div>
         </div>
 
-        <div class="gallery-card">
-          <img src="assets/img/food.jpg" alt="Food" />
-          <div class="gallery-overlay">
-            <span class="gallery-title">Food</span>
-            <span class="gallery-count">33</span>
+        <div class="thumb-card single">
+          <img src="assets/food.jpg" alt="Food" />
+          <div class="thumb-overlay">
+            <span>Food</span>
+            <span>33</span>
           </div>
         </div>
 
-        <div class="gallery-card menu-gallery">
-          <div class="menu-grid">
-            <img src="assets/img/menu-left.jpg" alt="Menu photo left" />
-            <img src="assets/img/menu-right.jpg" alt="Menu photo right" />
+        <div class="thumb-card double">
+          <div class="half-thumb">
+            <img src="assets/menu-left.jpg" alt="Menu left" />
           </div>
-          <div class="gallery-overlay">
-            <span class="gallery-title">Menu</span>
-            <span class="gallery-count">4</span>
+          <div class="half-thumb">
+            <img src="assets/menu-right.jpg" alt="Menu right" />
+          </div>
+          <div class="thumb-overlay">
+            <span>Menu</span>
+            <span>4</span>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="content-row">
-      <div class="left-panel">
-        <div class="brand-row">
+    <div class="content-grid">
+      <div class="left-column">
+        <div class="identity-block">
           <div class="logo-badge">
-            <img src="assets/img/logo.png" alt="Yuna logo" />
+            <img src="assets/logo.png" alt="Yuna logo" />
           </div>
 
-          <div class="brand-copy">
-            <div class="title-distance-row">
+          <div class="restaurant-copy">
+            <div class="title-line">
               <h1>Yuna</h1>
               <span class="distance-badge">
-                <img src="assets/img/distance.svg" alt="Distance icon" />
-                <span>0.6 км</span>
+                <img src="assets/small-location.svg" alt="Зай" />
+                <span>0.6 KM</span>
               </span>
             </div>
 
-            <div class="rating-row">
-              <span class="rating-score">4.3</span>
-              <span class="stars"><span class="filled">&#9733;</span><span class="filled">&#9733;</span><span class="filled">&#9733;</span><span class="filled">&#9733;</span><span class="empty">&#9733;</span></span>
+            <div class="rating-line">
+              <span class="score">4.3</span>
+              <span class="stars">★★★★<span class="muted-star">★</span></span>
               <a class="review-link" href="#">(86 сэтгэгдэл)</a>
             </div>
 
-            <div class="tag-row">
+            <div class="tags-line">
               <span>#Солонгос ресторан</span>
               <span>#Ази ресторан</span>
             </div>
@@ -112,18 +119,25 @@
 
         <div class="review-section">
           <h2>Сэтгэгдэл үлдээх</h2>
-          <div class="review-box">
-            <a class="review-button" href="#">
-              <img src="assets/img/leave-review.svg" alt="Leave review" />
+          <div class="review-card">
+            <a class="review-fab" href="#">
+              <img src="assets/review.svg" alt="Сэтгэгдэл үлдээх" />
             </a>
           </div>
         </div>
       </div>
 
-      <div class="right-panel">
-        <div class="action-pills">
-          <a class="action-pill" href="#"><span class="pill-icon">&#9733;</span><span>сэтгэгдэл</span></a>
-          <a class="action-pill" href="#"><span class="pill-icon">&#9776;</span><span>цэс</span></a>
+      <div class="right-column">
+        <div class="quick-tabs">
+          <a class="quick-pill" href="#">★ сэтгэгдэл</a>
+          <a class="quick-pill" href="#">
+            <span class="mini-bars">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span>цэс</span>
+          </a>
         </div>
 
         <div class="info-block">
@@ -133,16 +147,14 @@
 
         <div class="info-block">
           <h3>ДЭЛГЭРЭНГҮЙ</h3>
-          <p>Yuna Restaurant бол Солонгос хоолны сүлжээ ресторан бөгөөд тус ресторан нь уламжлалт Солонгос амтыг орчин үеийн тав тухтай орчинтой хослуулан санал болгодог.</p>
-          <a class="more-link" href="#">дэлгэрэнгүй <span class="more-arrow">&#709;</span></a>
+          <p>Yuna Restaurant бол Солонгос хоолны сүлжээ ресторан бөгөөд тус ресторан нь уламжлалт болон орчин үеийн амтыг хослуулсан менюгээрээ онцлог.</p>
+          <a class="more-link" href="#">дэлгэрэнгүй <span>⌄</span></a>
         </div>
 
-        <div class="hours-pill">
-          <span class="hours-left">
-            <span class="clock-icon">&#9716;</span>
-            <span class="hours-text">11:00 - 00:00</span>
-          </span>
-          <span class="hours-arrow">&#709;</span>
+        <div class="hours-card">
+          <span class="clock-face"></span>
+          <span class="hours-text">11:00 - 00:00</span>
+          <span class="caret">⌄</span>
         </div>
       </div>
     </div>
