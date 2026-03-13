@@ -1,4 +1,4 @@
-:root { /*Би color, spacing, typography-ийн утгуудыг :root дотор custom property болгосон. Дараа нь var(--name) гэж дуудаж ашигласан.*/
+:root { 
   --font-main: "Noto Sans", Arial, sans-serif;
 
   --fs-sm: 0.9rem;
@@ -36,7 +36,7 @@
   --trans-base: 0.25s ease;
 }
 
-/* dark/light mode - css only */
+/* dark/light mode - css */
 #theme-toggle {
   position: absolute;
   left: -9999px;
