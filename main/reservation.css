@@ -1619,7 +1619,7 @@ body {
   50% { box-shadow: 0 0.9rem 1.8rem rgba(243, 39, 76, 0.26); }
 }
 
-/* responsive layout without drifting from original desktop design */
+/* responsive layout */
 .hero-row,
 .content-row {
   width: min(100%, var(--content-max));
