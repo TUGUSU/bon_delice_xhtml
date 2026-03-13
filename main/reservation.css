@@ -966,10 +966,6 @@ a {
   transform: translateY(1px);
 }
 
-/* ========================================
-   Animated button interactions (CSS only)
-   XHTML 1.0 compatible
-======================================== */
 .search-input-wrap,
 .map-button,
 .menu-button,
