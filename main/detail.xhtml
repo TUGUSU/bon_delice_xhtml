@@ -1,124 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="mn" lang="mn">
   <head>
-    <title>Restaurant Page - Yuna</title>
+    <title>Yuna - Restaurant</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- typograph) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;family=Noto+Sans+Mongolian:wght@400;600;700&amp;display=swap" />
+
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
 
   <body>
-    <!-- Top bar -->
-    <div class="topbar">
-      <div class="topbar__left">
-        <span class="pin">&#x1F4CD;</span>
-        <span class="location">Баянзүрх дүүрэг, 26-р гудамж</span>
-        <a class="btn-pill" href="#" title="Map">Газрын зураг</a>
-      </div>
-
-      <div class="topbar__center">
-        <form class="search" action="#" method="get">
-          <input class="search__input" type="text" name="q" value="" placeholder="Хайх..." />
-          <button class="search__btn" type="submit" title="Search">&#x1F50D;</button>
-        </form>
-      </div>
-
-      <div class="topbar__right">
-        <a class="icon-btn" href="#" title="Menu">&#9776;</a>
-      </div>
-    </div>
-
-    <div class="page">
-      <div class="hero">
-        <div class="hero__main">
-          <img class="hero__img" src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=1400&amp;q=70" alt="Restaurant interior" />
+    
+    <input id="themeToggle" class="theme-toggle" type="checkbox" />
+    <div class="app">
+      <!--top bar-->
+      <div class="topbar">
+        <div class="topbar__left">
+          <span class="pin">📍</span>
+          <span class="location">Баянзүрх дүүрэг, 26-р хороо</span>
+          <a class="btn-pill" href="#" title="Map">Газрын зураг</a>
         </div>
 
-        <div class="hero__side">
-          <div class="thumb">
-            <img class="thumb__img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&amp;fit=crop&amp;w=700&amp;q=70" alt="Interior" />
-          </div>
+        <div class="topbar__center">
+          <form class="search" action="#" method="get">
+            <input class="search__input" type="text" name="q" value="" placeholder="Хайх..." />
+            <button class="search__btn" type="submit" title="Search">search</button>
+          </form>
+        </div>
 
-          <div class="thumb">
-            <img class="thumb__img" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&amp;fit=crop&amp;w=700&amp;q=70" alt="Food" />
-            
-          </div>
+        <div class="topbar__right">
+          <!-- inline-->
+          <label class="theme-btn" for="themeToggle" title="Dark/Light">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0 4a1 1 0 0 1-1-1v-1a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1Zm0-18a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1Zm10 9a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1ZM4 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm15.07 7.07a1 1 0 0 1-1.41 0l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41ZM7.46 7.46a1 1 0 0 1-1.41 0l-.71-.71A1 1 0 1 1 6.75 5.34l.71.71a1 1 0 0 1 0 1.41Zm11.61-2.12a1 1 0 0 1 0 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0ZM7.46 16.54a1 1 0 0 1 0 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0Z"/>
+            </svg>
+          </label>
 
-          <div class="thumb">
-            <img class="thumb__img" src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&amp;fit=crop&amp;w=700&amp;q=70" alt="Menu" />
-            
-          </div>
+          <a class="icon-btn" href="#" title="Menu">☰</a>
         </div>
       </div>
 
-      <div class="info">
-        <div class="brand">
-          <div class="logo">
-            <span class="logo__text">Restinfo</span>
+      <!-- page -->
+      <div class="page">
+        <!-- side -->
+        <div class="hero">
+          <div class="hero__main">
+            <img class="hero__img"
+              src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&amp;fit=crop&amp;w=1400&amp;q=70"
+              alt="Restaurant interior" />
+            <div class="badge">
+              <span class="badge__icon">📷</span>
+              <span class="badge__count">120</span>
+            </div>
           </div>
 
-          <div class="brand__text">
-            <h1 class="name">Restinfo</h1>
-
-            <div class="subline">
-              <span class="distance">&#x1F4CD; 0.6 KM</span>
+          <div class="hero__side">
+            <div class="thumb">
+              <img class="thumb__img"
+                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&amp;fit=crop&amp;w=700&amp;q=70"
+                alt="Interior" />
             </div>
 
-            <div class="rating">
-              <span class="rating__num">4.3</span>
-              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-              <span class="reviews">(86 сэтгэгдэл)</span>
+            <div class="thumb">
+              <img class="thumb__img"
+                src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&amp;fit=crop&amp;w=700&amp;q=70"
+                alt="Food" />
+              
             </div>
 
-            <div class="tags">
-              <span>#Солонгос ресторан</span>
-              <span>#Ази ресторан</span>
-            </div>
-
-            <div class="cta">
-              <a class="btn-primary" href="#" title="Reserve">ШИРЭЭ ЗАХИАЛАХ</a>
+            <div class="thumb">
+              <img class="thumb__img"
+                src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&amp;fit=crop&amp;w=700&amp;q=70"
+                alt="Menu" />
             </div>
           </div>
         </div>
 
-        <div class="panel">
+        <!-- information -->
+        <div class="info">
+          <div class="brand">
+            <div class="logo">
+              <span class="logo__text">Yuna</span>
+            </div>
 
-          <div class="panel__section">
-            <h3 class="section-title">ХАЯГ</h3>
-            <p class="small">
-              Royal Castle Apartment, Seoul Business Center,<br />
-              BZD - 1 хороо, Ulaanbaatar 13380
-            </p>
+            <div class="brand__text">
+              <h1 class="name">Yuna</h1>
+
+              <div class="subline">
+                <span class="distance">📍 0.6 KM</span>
+              </div>
+
+              <div class="rating">
+                <span class="rating__num">4.3</span>
+                <span class="stars">★★★★☆</span>
+                <span class="reviews">(86 сэтгэгдэл)</span>
+              </div>
+
+              <div class="tags">
+                <span>#Солонгос ресторан</span>
+                <span>#Ази ресторан</span>
+              </div>
+
+              <div class="cta">
+                <a class="btn-primary" href="#" title="Reserve">ШИРЭЭ ЗАХИАЛАХ</a>
+              </div>
+            </div>
           </div>
 
-          <div class="panel__section">
-            <h3 class="section-title">ДЭЛГЭРЭНГҮЙ</h3>
-            <p class="small">
-              Yuna Restaurant бол Солонгос хоолны сүлжээ ресторан бөгөөд тус ресторан нь
-              уламжлалт арга барилаар хийдгээрээ онцлогтой.
-            </p>
-          </div>
+          <div class="panel">
+            <div class="panel__tabs">
+              <a class="tab active" href="#" title="Reviews">сэтгэгдэл</a>
+              <a class="tab" href="#" title="Hours">цаг</a>
+            </div>
 
-          <div class="panel__section">
-            <div class="hours">
-              <span class="clock">&#x1F551;</span>
-              <span>11:00 - 22:00</span>
+            <div class="panel__section">
+              <h3 class="section-title">ХАЯГ</h3>
+              <p class="small">
+                Royal Castle Apartment, Seoul Business Center,<br />
+                BZD - 1 хороо, Ulaanbaatar 13380
+              </p>
+            </div>
+
+            <div class="panel__section">
+              <h3 class="section-title">ДЭЛГЭРЭНГҮЙ</h3>
+              <p class="small">
+                Yuna Restaurant бол Солонгос хоолны сүлжээ ресторан бөгөөд тус ресторан нь уламжлалт...
+                <a href="#" title="More">дэлгэрэнгүй</a>
+              </p>
+            </div>
+
+            <div class="panel__section">
+              <div class="hours">
+                <span>11:00 - 00:00</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!--Sanal heseg/bottom/ -->
-      <div class="bottom">
-        <div class="review-box">
-          <div class="review-box__header">
-            <h2 class="bottom-title">Сэтгэгдэл үлдээх</h2>
-            <a class="fab" href="#" title="Write">&#9998;</a>
-          </div>
+        <!-- tugsgul-->
+        <div class="bottom">
+          <div class="review-box">
+            <div class="review-box__header">
+              <h2 class="bottom-title">Сэтгэгдэл үлдээх</h2>
+              <a class="btn-primary" href="#" title="Write"> илгээх</a>
+            </div>
 
-          <div class="review-box__body">
-          <textarea id="request" name="request" rows="6" cols="145"></textarea>
+            <div class="review-box__body">
+              <div class="input-placeholder"></div>
+            </div>
           </div>
         </div>
       </div>
