@@ -966,6 +966,10 @@ a {
   transform: translateY(1px);
 }
 
+/* ========================================
+   Animated button interactions (CSS only)
+   XHTML 1.0 compatible
+======================================== */
 .search-input-wrap,
 .map-button,
 .menu-button,
@@ -1615,7 +1619,7 @@ body {
   50% { box-shadow: 0 0.9rem 1.8rem rgba(243, 39, 76, 0.26); }
 }
 
-/* responsive layout */
+/* responsive layout without drifting from original desktop design */
 .hero-row,
 .content-row {
   width: min(100%, var(--content-max));
@@ -1746,4 +1750,120 @@ body {
 
 .reserve-button-text {
   display: inline-block;
+}
+
+/* Dynamic additions */
+#hero-main-slot {
+  width: 896px;
+}
+
+.dynamic-date-carousel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dynamic-date-track {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+}
+
+.dynamic-date-track::-webkit-scrollbar {
+  height: 8px;
+}
+
+.dynamic-date-track::-webkit-scrollbar-thumb {
+  background: #9a9a9a;
+  border-radius: 999px;
+}
+
+.dynamic-date-chip {
+  flex: 0 0 auto;
+  border: none;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.dynamic-date-chip.is-active {
+  background: #f3274c;
+  color: #ffffff;
+  border-color: #f3274c;
+}
+
+.dynamic-date-chip.is-active .date-day,
+.dynamic-date-chip.is-active .date-number {
+  color: #ffffff;
+}
+
+.dynamic-table-option {
+  width: 100%;
+  text-align: left;
+  background: #ffffff;
+  border: 1px solid #d7d7d7;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.dynamic-table-option .table-name {
+  min-width: 110px;
+}
+
+.table-status {
+  margin-left: auto;
+  color: #777777;
+  font-weight: 500;
+}
+
+.dynamic-table-option.is-active {
+  border-color: #edb9c6;
+  box-shadow: inset 0 0 0 1px #f2d7de;
+}
+
+.dynamic-table-option.is-unavailable,
+.dynamic-table-option:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.date-arrow {
+  border: none;
+  cursor: pointer;
+}
+
+#restaurant-tags {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+#restaurant-stars .filled {
+  color: #f6bf18;
+}
+
+#restaurant-stars .empty {
+  color: #d3d3d3;
+}
+
+.reserve-button-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1300px) {
+  #hero-main-slot,
+  .hero-main,
+  .hero-main img {
+    width: 100%;
+    max-width: 896px;
+    height: auto;
+    aspect-ratio: 896 / 501;
+  }
 }
