@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="mn" lang="mn">
+  <head>
+    <title>Admin Dashboard - Yuna Style</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- Web font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;family=Noto+Sans+Mongolian:wght@400;600;700&amp;display=swap" />
+
+    <link rel="stylesheet" type="text/css" href="admin.css" />
+  </head>
+
+  <body>
+    <!-- Theme toggle (no JS) -->
+    <input id="themeToggle" class="theme-toggle" type="checkbox" />
+    <div class="app">
+      <!-- Topbar -->
+      <div class="topbar">
+        <div class="topbar__left">
+          <div class="brandmark">
+            <span class="brandmark__dot"></span>
+            <span class="brandmark__name">Admin</span>
+          </div>
+        </div>
+
+        <div class="topbar__center">
+          <form class="search" action="#" method="get">
+           <input id="searchInput" class="search__input" type="text"
+       placeholder="Хайх (захиалга, хэрэглэгч, бичвэр)..." />
+            <button class="search__btn" type="submit" title="Search">🔎</button>
+          </form>
+        </div>
+
+        <div class="topbar__right">
+          <!-- Inline SVG: theme -->
+          <label class="theme-btn" for="themeToggle" title="Dark/Light">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0 4a1 1 0 0 1-1-1v-1a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1Zm0-18a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1Zm10 9a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1ZM4 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm15.07 7.07a1 1 0 0 1-1.41 0l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41ZM7.46 7.46a1 1 0 0 1-1.41 0l-.71-.71A1 1 0 1 1 6.75 5.34l.71.71a1 1 0 0 1 0 1.41Zm11.61-2.12a1 1 0 0 1 0 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0ZM7.46 16.54a1 1 0 0 1 0 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0Z"/>
+            </svg>
+          </label>
+
+          <a class="icon-btn" href="#" title="Notifications">🔔</a>
+          <div class="avatar" title="Admin">
+            <span class="avatar__txt">F</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shell -->
+      <div class="shell">
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <div class="sidebar__section">
+            <div class="sidebar__title">Навигаци</div>
+
+            <a class="navitem active" href="#" title="Dashboard">
+              <span class="navitem__ic">📊</span>
+              <span class="navitem__tx">Dashboard</span>
+            </a>
+
+            <a class="navitem" href="#" title="Reservations">
+              <span class="navitem__ic">📅</span>
+              <span class="navitem__tx">Захиалга</span>
+            </a>
+
+            <a class="navitem" href="#" title="Restaurants">
+              <span class="navitem__ic">🍽️</span>
+              <span class="navitem__tx">Ресторан</span>
+            </a>
+
+            <a class="navitem" href="#" title="Reviews">
+              <span class="navitem__ic">⭐</span>
+              <span class="navitem__tx">Сэтгэгдэл</span>
+            </a>
+
+            <a class="navitem" href="#" title="Users">
+              <span class="navitem__ic">👤</span>
+              <span class="navitem__tx">Хэрэглэгч</span>
+            </a>
+
+            <a class="navitem" href="#" title="Settings">
+              <span class="navitem__ic">⚙️</span>
+              <span class="navitem__tx">Тохиргоо</span>
+            </a>
+          </div>
+
+          <div class="sidebar__section">
+            <div class="sidebar__title">Quick actions</div>
+            <a class="btn-primary btn-full" href="#" title="Create restaurant">+ Ресторан нэмэх</a>
+          </div>
+
+          <div class="sidebar__footer">
+            <div class="mini">
+              <span class="mini__k">Online</span>
+              <span class="mini__v">12 админ</span>
+            </div>
+            <div class="mini">
+              <span class="mini__k">Queue</span>
+              <span class="mini__v">3 ticket</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main -->
+        <div class="main">
+          <!-- KPI cards -->
+          <div class="kpi">
+            <div class="card card--accent">
+              <div class="card__top">
+                <div class="chip">Өнөөдөр</div>
+                <span class="card__ic">📈</span>
+              </div>
+              <div class="card__num">86</div>
+              <div class="card__label">Захиалга</div>
+              <div class="card__hint">Өчигдрөөс +12%</div>
+            </div>
+
+            <div class="card">
+              <div class="card__top">
+                <div class="chip">Realtime</div>
+                <span class="card__ic">👥</span>
+              </div>
+              <div class="card__num">1,240</div>
+              <div class="card__label">Active users</div>
+              <div class="card__hint">Peak 1,410</div>
+            </div>
+          </div>
+
+          <!-- Two columns -->
+          <div class="grid2">
+            <!-- Latest reservations table -->
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <div class="panel__title">Сүүлийн захиалгууд</div>
+                  <div class="panel__sub">Сүүлийн 24 цагийн мэдээлэл</div>
+                </div>
+                <div class="panel__actions">
+                  <a class="btn-ghost" href="#" title="Export">Export</a>
+                  <a class="btn-primary" href="#" title="New">+ New</a>
+                </div>
+              </div>
+
+              <div class="tablewrap">
+                <table class="table" summary="Reservations list">
+                  <thead>
+                    <tr>
+                      <th>Код</th>
+                      <th>Нэр</th>
+                      <th>Цаг</th>
+                      <th>Хүн</th>
+                      <th>Төлөв</th>
+                    </tr>
+                  </thead>
+                  <tbody id="reservationTable"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Quick form -->
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <div class="panel__title">Түргэн тохиргоо</div>
+                  <div class="panel__sub">Рестораны мэдээлэл шинэчлэх</div>
+                </div>
+              </div>
+
+              <form class="form" action="#" method="post">
+                <div class="form__row">
+                  <div class="field">
+                    <label for="rname">Нэр</label>
+                    <input id="rname" class="input" type="text" name="rname" value="Yuna" />
+                  </div>
+                  <div class="field">
+                    <label for="rtype">Төрөл</label>
+                    <input id="rtype" class="input" type="text" name="rtype" value="Солонгос / Ази" />
+                  </div>
+                </div>
+
+                <div class="form__row">
+                  <div class="field">
+                    <label for="hours">Цагийн хуваарь</label>
+                    <input id="hours" class="input" type="text" name="hours" value="11:00 - 00:00" />
+                  </div>
+                  <div class="field">
+                    <label for="price">Үнэ (түвшин)</label>
+                    <select id="price" class="select" name="price">
+                      <option value="$$">$</option>
+                      <option value="$$$">$$$</option>
+                      <option value="$$$$" selected="selected">$$$$</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="desc">Тайлбар</label>
+                  <textarea id="desc" class="textarea" name="desc" rows="5" cols="40">Солонгос хоолны сүлжээ ресторан...</textarea>
+                </div>
+
+                <div class="form__actions">
+                  <a class="btn-ghost" href="#" title="Reset">Reset</a>
+                  <button class="btn-primary" type="submit">Хадгалах</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Bottom full-width -->
+          <div class="panel">
+            <div class="panel__head">
+              <div>
+                <div class="panel__title">Сэтгэгдэл</div>
+              </div>
+            </div>
+
+            <div class="reviewlist">
+              <div class="reviewitem">
+                <div class="reviewitem__left">
+                  <div class="bubble">⭐</div>
+                  <div>
+                    <div class="reviewitem__title">Хоол хүйтэн байсан</div>
+                    <div class="reviewitem__meta">User: enkhjin • 2026/03/06</div>
+                  </div>
+                </div>
+                <div class="reviewitem__right">
+                  <a class="btn-ghost" href="#" title="Hide">Hide</a>
+                  <a class="btn-primary" href="#" title="Approve">Approve</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer">
+            <span>© 2026 Admin Panel</span>
+            <span class="footer__muted">Yuna style UI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="adminapp.js"></script>
+  </body>
+</html>
