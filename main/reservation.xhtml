@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="mn" lang="mn">
+<!DOCTYPE html>
+<html lang="mn">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yuna Restaurant</title>
-  <link rel="stylesheet" type="text/css" href="reservation.css" />
+  <link rel="stylesheet" href="reservation.css" />
 </head>
 <body>
   <div id="page">
@@ -14,8 +12,8 @@
       <div class="location-chip">
         <img class="location-pin" src="assets/img/pin.svg" alt="Location pin" />
         <div class="location-copy">
-          <span class="location-label">Таны одоо байгаа байршил.</span>
-          <span class="location-value">Bayuzurkh district, 26 street</span>
+          <span id="location-label" class="location-label"></span>
+          <span id="location-value" class="location-value"></span>
         </div>
       </div>
 
@@ -32,7 +30,7 @@
 
       <div class="search-bar">
         <div class="search-input-wrap">
-          <input type="text" value="Хайх..." />
+          <input id="search-input" type="text" placeholder="Хайх..." />
         </div>
         <a class="search-button" href="#">
           <img src="assets/img/search.svg" alt="Search icon" />
@@ -45,67 +43,33 @@
     </div>
 
     <div class="hero-row">
-      <a class="hero-main gallery-trigger" href="#gallery-1">
-        <img src="assets/img/hero-main.jpg" alt="Yuna restaurant main hall" />
-        <span class="photo-badge"><span class="camera-icon">&#128247;</span>120</span>
-      </a>
-
-      <div class="hero-side">
-        <a class="gallery-card gallery-trigger" href="#gallery-2">
-          <img src="assets/img/interior.jpg" alt="Interior" />
-          <span class="gallery-overlay">
-            <span class="gallery-title">Interior</span>
-            <span class="gallery-count">38</span>
-          </span>
-        </a>
-
-        <a class="gallery-card gallery-trigger" href="#gallery-3">
-          <img src="assets/img/food.jpg" alt="Food" />
-          <span class="gallery-overlay">
-            <span class="gallery-title">Food</span>
-            <span class="gallery-count">33</span>
-          </span>
-        </a>
-
-        <a class="gallery-card menu-gallery gallery-trigger" href="#gallery-4">
-          <span class="menu-grid">
-            <img src="assets/img/menu-left.jpg" alt="Menu photo left" />
-            <img src="assets/img/menu-right.jpg" alt="Menu photo right" />
-          </span>
-          <span class="gallery-overlay">
-            <span class="gallery-title">Menu</span>
-            <span class="gallery-count">4</span>
-          </span>
-        </a>
-      </div>
+      <div id="hero-main-slot"></div>
+      <div id="hero-side-slot" class="hero-side"></div>
     </div>
 
     <div class="content-row">
       <div class="left-panel">
         <div class="brand-row">
           <div class="logo-badge">
-            <img src="assets/img/logo.png" alt="Yuna logo" />
+            <img id="logo-image" src="assets/img/logo.png" alt="Yuna logo" />
           </div>
 
           <div class="brand-copy">
             <div class="title-distance-row">
-              <h1>Yuna</h1>
+              <h1 id="restaurant-name"></h1>
               <span class="distance-badge">
                 <img src="assets/img/distance.svg" alt="Distance icon" />
-                <span>0.6 км</span>
+                <span id="restaurant-distance"></span>
               </span>
             </div>
 
             <div class="rating-row">
-              <span class="rating-score">4.3</span>
-              <span class="stars"><span class="filled">&#9733;</span><span class="filled">&#9733;</span><span class="filled">&#9733;</span><span class="filled">&#9733;</span><span class="empty">&#9733;</span></span>
-              <a class="review-link" href="#">(86 сэтгэгдэл)</a>
+              <span id="restaurant-rating" class="rating-score"></span>
+              <span id="restaurant-stars" class="stars"></span>
+              <a id="restaurant-reviews" class="review-link" href="#"></a>
             </div>
 
-            <div class="tag-row">
-              <span>#Солонгос ресторан</span>
-              <span>#Ази ресторан</span>
-            </div>
+            <div id="restaurant-tags" class="tag-row"></div>
 
             <a class="reserve-button" href="#booking-modal">
               <span class="reserve-button-icon">&#128197;</span>
@@ -132,19 +96,19 @@
 
         <div class="info-block">
           <h3>ХАЯГ</h3>
-          <p>Royal Castle Apartment, Seoul Business Center,<br />BZD - 1 khoroo, Ulaanbaatar 13380</p>
+          <p id="restaurant-address"></p>
         </div>
 
         <div class="info-block">
           <h3>ДЭЛГЭРЭНГҮЙ</h3>
-          <p>Yuna Restaurant бол Солонгос хоолны сүлжээ ресторан бөгөөд тус ресторан нь уламжлалт Солонгос амтыг орчин үеийн тав тухтай орчинтой хослуулан санал болгодог.</p>
+          <p id="restaurant-description"></p>
           <a class="more-link" href="#">дэлгэрэнгүй <span class="more-arrow">&#709;</span></a>
         </div>
 
         <div class="hours-pill">
           <span class="hours-left">
             <span class="clock-icon">&#9716;</span>
-            <span class="hours-text">11:00 - 00:00</span>
+            <span id="restaurant-hours" class="hours-text"></span>
           </span>
           <span class="hours-arrow">&#709;</span>
         </div>
@@ -152,240 +116,36 @@
     </div>
   </div>
 
-  <div id="gallery-1" class="gallery-lightbox">
-    <a class="gallery-backdrop" href="#page"><span class="visually-hidden">Close gallery</span></a>
-    <div class="gallery-dialog">
-      <a class="gallery-close" href="#page" title="Close">&#215;</a>
-      <a class="gallery-arrow gallery-arrow-left" href="#gallery-5" title="Previous">&#8249;</a>
-      <div class="gallery-stage">
-        <img src="assets/img/hero-main.jpg" alt="Yuna restaurant main hall" />
-      </div>
-      <a class="gallery-arrow gallery-arrow-right" href="#gallery-2" title="Next">&#8250;</a>
-      <div class="gallery-caption">Main Hall</div>
-    </div>
-  </div>
-
-  <div id="gallery-2" class="gallery-lightbox">
-    <a class="gallery-backdrop" href="#page"><span class="visually-hidden">Close gallery</span></a>
-    <div class="gallery-dialog">
-      <a class="gallery-close" href="#page" title="Close">&#215;</a>
-      <a class="gallery-arrow gallery-arrow-left" href="#gallery-1" title="Previous">&#8249;</a>
-      <div class="gallery-stage">
-        <img src="assets/img/interior.jpg" alt="Interior" />
-      </div>
-      <a class="gallery-arrow gallery-arrow-right" href="#gallery-3" title="Next">&#8250;</a>
-      <div class="gallery-caption">Interior</div>
-    </div>
-  </div>
-
-  <div id="gallery-3" class="gallery-lightbox">
-    <a class="gallery-backdrop" href="#page"><span class="visually-hidden">Close gallery</span></a>
-    <div class="gallery-dialog">
-      <a class="gallery-close" href="#page" title="Close">&#215;</a>
-      <a class="gallery-arrow gallery-arrow-left" href="#gallery-2" title="Previous">&#8249;</a>
-      <div class="gallery-stage">
-        <img src="assets/img/food.jpg" alt="Food" />
-      </div>
-      <a class="gallery-arrow gallery-arrow-right" href="#gallery-4" title="Next">&#8250;</a>
-      <div class="gallery-caption">Food</div>
-    </div>
-  </div>
-
-  <div id="gallery-4" class="gallery-lightbox">
-    <a class="gallery-backdrop" href="#page"><span class="visually-hidden">Close gallery</span></a>
-    <div class="gallery-dialog">
-      <a class="gallery-close" href="#page" title="Close">&#215;</a>
-      <a class="gallery-arrow gallery-arrow-left" href="#gallery-3" title="Previous">&#8249;</a>
-      <div class="gallery-stage">
-        <img src="assets/img/menu-left.jpg" alt="Menu photo left" />
-      </div>
-      <a class="gallery-arrow gallery-arrow-right" href="#gallery-5" title="Next">&#8250;</a>
-      <div class="gallery-caption">Menu</div>
-    </div>
-  </div>
-
-  <div id="gallery-5" class="gallery-lightbox">
-    <a class="gallery-backdrop" href="#page"><span class="visually-hidden">Close gallery</span></a>
-    <div class="gallery-dialog">
-      <a class="gallery-close" href="#page" title="Close">&#215;</a>
-      <a class="gallery-arrow gallery-arrow-left" href="#gallery-4" title="Previous">&#8249;</a>
-      <div class="gallery-stage">
-        <img src="assets/img/menu-right.jpg" alt="Menu photo right" />
-      </div>
-      <a class="gallery-arrow gallery-arrow-right" href="#gallery-1" title="Next">&#8250;</a>
-      <div class="gallery-caption">Menu Detail</div>
-    </div>
-  </div>
+  <div id="lightboxes-slot"></div>
 
   <div id="booking-modal" class="booking-modal">
     <a class="booking-modal-backdrop" href="#page"><span class="visually-hidden">Close booking modal</span></a>
-
     <div class="booking-modal-dialog">
       <a class="booking-close" href="#page" title="Close">&#215;</a>
-
       <div class="booking-modal-body">
         <h2>Ширээ болон цагийн хуваар</h2>
-
-        <form class="booking-form" action="#" method="get">
-          <div class="date-selector-carousel">
-            <input class="date-page" type="radio" name="date-page" id="date-page-1" checked="checked" />
-            <input class="date-page" type="radio" name="date-page" id="date-page-2" />
-            <input class="date-page" type="radio" name="date-page" id="date-page-3" />
-            <input class="date-page" type="radio" name="date-page" id="date-page-4" />
-            <input class="date-page" type="radio" name="date-page" id="date-page-5" />
-
-            <div class="date-nav date-nav-left">
-              <label class="date-arrow date-arrow-left prev-1 disabled" for="date-page-1"><span>&#8249;</span></label>
-              <label class="date-arrow date-arrow-left prev-2" for="date-page-1"><span>&#8249;</span></label>
-              <label class="date-arrow date-arrow-left prev-3" for="date-page-2"><span>&#8249;</span></label>
-              <label class="date-arrow date-arrow-left prev-4" for="date-page-3"><span>&#8249;</span></label>
-              <label class="date-arrow date-arrow-left prev-5" for="date-page-4"><span>&#8249;</span></label>
-            </div>
-
+        <form id="booking-form" class="booking-form" action="#" method="get">
+          <div class="date-selector-carousel dynamic-date-carousel">
+            <button id="dates-prev" class="date-arrow date-arrow-left" type="button"><span>&#8249;</span></button>
             <div class="date-selector-window">
-              <div class="date-track">
-                <div class="date-week date-week-1">
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-1" checked="checked" />
-                  <label class="date-chip" for="booking-date-1"><span class="date-number">1</span><span class="date-day">Даваа</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-2" />
-                  <label class="date-chip" for="booking-date-2"><span class="date-number">2</span><span class="date-day">Мягмар</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-3" />
-                  <label class="date-chip" for="booking-date-3"><span class="date-number">3</span><span class="date-day">Лхагва</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-4" />
-                  <label class="date-chip" for="booking-date-4"><span class="date-number">4</span><span class="date-day">Пүрэв</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-5" />
-                  <label class="date-chip" for="booking-date-5"><span class="date-number">5</span><span class="date-day">Баасан</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-6" />
-                  <label class="date-chip" for="booking-date-6"><span class="date-number">6</span><span class="date-day">Бямба</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-7" />
-                  <label class="date-chip" for="booking-date-7"><span class="date-number">7</span><span class="date-day">Ням</span></label>
-                </div>
-
-                <div class="date-week date-week-2">
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-8" />
-                  <label class="date-chip" for="booking-date-8"><span class="date-number">8</span><span class="date-day">Даваа</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-9" />
-                  <label class="date-chip" for="booking-date-9"><span class="date-number">9</span><span class="date-day">Мягмар</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-10" />
-                  <label class="date-chip" for="booking-date-10"><span class="date-number">10</span><span class="date-day">Лхагва</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-11" />
-                  <label class="date-chip" for="booking-date-11"><span class="date-number">11</span><span class="date-day">Пүрэв</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-12" />
-                  <label class="date-chip" for="booking-date-12"><span class="date-number">12</span><span class="date-day">Баасан</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-13" />
-                  <label class="date-chip" for="booking-date-13"><span class="date-number">13</span><span class="date-day">Бямба</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-14" />
-                  <label class="date-chip" for="booking-date-14"><span class="date-number">14</span><span class="date-day">Ням</span></label>
-                </div>
-
-                <div class="date-week date-week-3">
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-15" />
-                  <label class="date-chip" for="booking-date-15"><span class="date-number">15</span><span class="date-day">Даваа</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-16" />
-                  <label class="date-chip" for="booking-date-16"><span class="date-number">16</span><span class="date-day">Мягмар</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-17" />
-                  <label class="date-chip" for="booking-date-17"><span class="date-number">17</span><span class="date-day">Лхагва</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-18" />
-                  <label class="date-chip" for="booking-date-18"><span class="date-number">18</span><span class="date-day">Пүрэв</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-19" />
-                  <label class="date-chip" for="booking-date-19"><span class="date-number">19</span><span class="date-day">Баасан</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-20" />
-                  <label class="date-chip" for="booking-date-20"><span class="date-number">20</span><span class="date-day">Бямба</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-21" />
-                  <label class="date-chip" for="booking-date-21"><span class="date-number">21</span><span class="date-day">Ням</span></label>
-                </div>
-
-                <div class="date-week date-week-4">
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-22" />
-                  <label class="date-chip" for="booking-date-22"><span class="date-number">22</span><span class="date-day">Даваа</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-23" />
-                  <label class="date-chip" for="booking-date-23"><span class="date-number">23</span><span class="date-day">Мягмар</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-24" />
-                  <label class="date-chip" for="booking-date-24"><span class="date-number">24</span><span class="date-day">Лхагва</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-25" />
-                  <label class="date-chip" for="booking-date-25"><span class="date-number">25</span><span class="date-day">Пүрэв</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-26" />
-                  <label class="date-chip" for="booking-date-26"><span class="date-number">26</span><span class="date-day">Баасан</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-27" />
-                  <label class="date-chip" for="booking-date-27"><span class="date-number">27</span><span class="date-day">Бямба</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-28" />
-                  <label class="date-chip" for="booking-date-28"><span class="date-number">28</span><span class="date-day">Ням</span></label>
-                </div>
-
-                <div class="date-week date-week-5">
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-29" />
-                  <label class="date-chip" for="booking-date-29"><span class="date-number">29</span><span class="date-day">Даваа</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-30" />
-                  <label class="date-chip" for="booking-date-30"><span class="date-number">30</span><span class="date-day">Мягмар</span></label>
-                  <input class="booking-date" type="radio" name="booking-date" id="booking-date-31" />
-                  <label class="date-chip" for="booking-date-31"><span class="date-number">31</span><span class="date-day">Лхагва</span></label>
-                  <span class="date-chip date-chip-empty"><span class="date-number">&#160;</span><span class="date-day">&#160;</span></span>
-                  <span class="date-chip date-chip-empty"><span class="date-number">&#160;</span><span class="date-day">&#160;</span></span>
-                  <span class="date-chip date-chip-empty"><span class="date-number">&#160;</span><span class="date-day">&#160;</span></span>
-                  <span class="date-chip date-chip-empty"><span class="date-number">&#160;</span><span class="date-day">&#160;</span></span>
-                </div>
-              </div>
+              <div id="date-track" class="date-track dynamic-date-track"></div>
             </div>
-
-            <div class="date-nav date-nav-right">
-              <label class="date-arrow date-arrow-right next-1" for="date-page-2"><span>&#8250;</span></label>
-              <label class="date-arrow date-arrow-right next-2" for="date-page-3"><span>&#8250;</span></label>
-              <label class="date-arrow date-arrow-right next-3" for="date-page-4"><span>&#8250;</span></label>
-              <label class="date-arrow date-arrow-right next-4" for="date-page-5"><span>&#8250;</span></label>
-              <label class="date-arrow date-arrow-right next-5 disabled" for="date-page-5"><span>&#8250;</span></label>
-            </div>
+            <button id="dates-next" class="date-arrow date-arrow-right" type="button"><span>&#8250;</span></button>
           </div>
 
-          <div class="table-selector">
-            <input class="booking-table" type="radio" name="booking-table" id="booking-table-1" checked="checked" />
-            <label class="table-option" for="booking-table-1">
-              <span class="table-name">ШИРЭЭ №1</span>
-              <span class="table-meta"><img src="assets/img/guest-gray.svg" alt="Guests" /><span>1-3</span></span>
-            </label>
-
-            <input class="booking-table" type="radio" name="booking-table" id="booking-table-2" />
-            <label class="table-option" for="booking-table-2">
-              <span class="table-name">ШИРЭЭ №2</span>
-              <span class="table-meta"><img src="assets/img/guest-gray.svg" alt="Guests" /><span>1-3</span></span>
-            </label>
-
-            <input class="booking-table" type="radio" name="booking-table" id="booking-table-3" />
-            <label class="table-option" for="booking-table-3">
-              <span class="table-name">ШИРЭЭ №3</span>
-              <span class="table-meta"><img src="assets/img/guest-gray.svg" alt="Guests" /><span>1-3</span></span>
-            </label>
-
-            <input class="booking-table" type="radio" name="booking-table" id="booking-table-4" />
-            <label class="table-option" for="booking-table-4">
-              <span class="table-name">ШИРЭЭ №4</span>
-              <span class="table-meta"><img src="assets/img/guest-gray.svg" alt="Guests" /><span>1-3</span></span>
-            </label>
-
-            <input class="booking-table" type="radio" name="booking-table" id="booking-table-5" />
-            <label class="table-option" for="booking-table-5">
-              <span class="table-name">ШИРЭЭ №5</span>
-              <span class="table-meta"><img src="assets/img/guest-gray.svg" alt="Guests" /><span>1-3</span></span>
-            </label>
-          </div>
+          <div id="table-list" class="table-selector"></div>
 
           <div class="time-row-modal">
-            <label class="time-label-modal" for="booking-time">Захиалах цаг</label>
+            <label class="time-label-modal" for="booking-time">Цаг сонгох</label>
             <div class="time-select-wrap-modal">
               <img src="assets/img/clock-gray.svg" alt="Clock" />
-              <select id="booking-time" name="booking-time">
-                <option selected="selected">11:00 - 12:00</option>
-                <option>12:00 - 13:00</option>
-                <option>13:00 - 14:00</option>
-                <option>14:00 - 15:00</option>
-                <option>18:00 - 19:00</option>
-                <option>19:00 - 20:00</option>
-              </select>
+              <select id="booking-time" name="booking-time"></select>
               <span class="time-select-arrow">&#709;</span>
             </div>
           </div>
 
           <div class="booking-modal-footer">
-            <a class="booking-submit" href="#booking-success">ЗАХИАЛАХ</a>
+            <button class="booking-submit" type="submit">ЗАХИАЛАХ</button>
           </div>
         </form>
       </div>
@@ -394,17 +154,14 @@
 
   <div id="booking-success" class="success-modal">
     <a class="booking-modal-backdrop" href="#page"><span class="visually-hidden">Close reservation success modal</span></a>
-
     <div class="success-modal-dialog">
       <a class="booking-close" href="#page" title="Close">&#215;</a>
-
       <div class="success-modal-body">
         <div class="success-icon">&#10003;</div>
         <h2>Thank you for reservation</h2>
         <p class="success-copy">Таны захиалгыг хүлээн авлаа.</p>
-        <p class="success-copy">Таны цаг 5-ны өдрийн <strong>14:00 цагаас 15:00 цагийн хооронд</strong> Yuna restaurant-д <strong>ширээ 3</strong> захиалагдлаа.</p>
+        <p id="success-copy-detail" class="success-copy"></p>
         <p class="success-copy success-copy-last">Баярлалаа.</p>
-
         <div class="success-actions">
           <a class="success-button" href="#page">БУЦАХ</a>
         </div>
@@ -412,5 +169,6 @@
     </div>
   </div>
 
+  <script type="text/javascript" src="reservation_main.js"></script>
 </body>
 </html>
