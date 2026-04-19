@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yuna Restaurant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="page">
+    <div class="topbar">
+      <div class="location-chip">
+        <img class="location-pin" src="assets/img/pin.svg" alt="Location pin" />
+        <div class="location-copy">
+          <span id="location-label" class="location-label"></span>
+          <span id="location-value" class="location-value"></span>
+        </div>
+      </div>
+
+      <a class="map-button" href="#">
+        <img src="assets/img/map.svg" alt="Map icon" />
+        <span>Газрын зураг</span>
+      </a>
+
+      <a class="menu-button" href="#">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+      </a>
+
+      <div class="search-bar">
+        <div class="search-input-wrap">
+          <input id="search-input" type="text" placeholder="Хайх..." />
+        </div>
+        <a class="search-button" href="#">
+          <img src="assets/img/search.svg" alt="Search icon" />
+        </a>
+      </div>
+
+      <a class="profile-button" href="#">
+        <img src="assets/img/user.svg" alt="User icon" />
+      </a>
+    </div>
+
+    <div class="hero-row">
+      <div id="hero-main-slot"></div>
+      <div id="hero-side-slot" class="hero-side"></div>
+    </div>
+
+    <div class="content-row">
+      <div class="left-panel">
+        <div class="brand-row">
+          <div class="logo-badge">
+            <img id="logo-image" src="assets/img/logo.png" alt="Yuna logo" />
+          </div>
+
+          <div class="brand-copy">
+            <div class="title-distance-row">
+              <h1 id="restaurant-name"></h1>
+              <span class="distance-badge">
+                <img src="assets/img/distance.svg" alt="Distance icon" />
+                <span id="restaurant-distance"></span>
+              </span>
+            </div>
+
+            <div class="rating-row">
+              <span id="restaurant-rating" class="rating-score"></span>
+              <span id="restaurant-stars" class="stars"></span>
+              <a id="restaurant-reviews" class="review-link" href="#"></a>
+            </div>
+
+            <div id="restaurant-tags" class="tag-row"></div>
+
+            <a class="reserve-button" href="#booking-modal">
+              <span class="reserve-button-icon">&#128197;</span>
+              <span class="reserve-button-text">ШИРЭЭ ЗАХИАЛАХ</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="review-section">
+          <h2>Сэтгэгдэл үлдээх</h2>
+          <div class="review-box">
+            <a class="review-button" href="#">
+              <img src="assets/img/leave-review.svg" alt="Leave review" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <div class="action-pills">
+          <a class="action-pill" href="#"><span class="pill-icon">&#9733;</span><span>сэтгэгдэл</span></a>
+          <a class="action-pill" href="#"><span class="pill-icon">&#9776;</span><span>цэс</span></a>
+        </div>
+
+        <div class="info-block">
+          <h3>ХАЯГ</h3>
+          <p id="restaurant-address"></p>
+        </div>
+
+        <div class="info-block">
+          <h3>ДЭЛГЭРЭНГҮЙ</h3>
+          <p id="restaurant-description"></p>
+          <a class="more-link" href="#">дэлгэрэнгүй <span class="more-arrow">&#709;</span></a>
+        </div>
+
+        <div class="hours-pill">
+          <span class="hours-left">
+            <span class="clock-icon">&#9716;</span>
+            <span id="restaurant-hours" class="hours-text"></span>
+          </span>
+          <span class="hours-arrow">&#709;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="lightboxes-slot"></div>
+
+  <div id="booking-modal" class="booking-modal">
+    <a class="booking-modal-backdrop" href="#page"><span class="visually-hidden">Close booking modal</span></a>
+    <div class="booking-modal-dialog">
+      <a class="booking-close" href="#page" title="Close">&#215;</a>
+      <div class="booking-modal-body">
+        <h2>Ширээ болон цагийн хуваар</h2>
+        <form id="booking-form" class="booking-form" action="#" method="get">
+          <div class="date-selector-carousel dynamic-date-carousel">
+            <button id="dates-prev" class="date-arrow date-arrow-left" type="button"><span>&#8249;</span></button>
+            <div class="date-selector-window">
+              <div id="date-track" class="date-track dynamic-date-track"></div>
+            </div>
+            <button id="dates-next" class="date-arrow date-arrow-right" type="button"><span>&#8250;</span></button>
+          </div>
+
+          <div id="table-list" class="table-selector"></div>
+
+          <div class="time-row-modal">
+            <label class="time-label-modal" for="booking-time">Цаг сонгох</label>
+            <div class="time-select-wrap-modal">
+              <img src="assets/img/clock-gray.svg" alt="Clock" />
+              <select id="booking-time" name="booking-time"></select>
+              <span class="time-select-arrow">&#709;</span>
+            </div>
+          </div>
+
+          <div class="booking-modal-footer">
+            <button class="booking-submit" type="submit">ЗАХИАЛАХ</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="booking-success" class="success-modal">
+    <a class="booking-modal-backdrop" href="#page"><span class="visually-hidden">Close reservation success modal</span></a>
+    <div class="success-modal-dialog">
+      <a class="booking-close" href="#page" title="Close">&#215;</a>
+      <div class="success-modal-body">
+        <div class="success-icon">&#10003;</div>
+        <h2>Thank you for reservation</h2>
+        <p class="success-copy">Таны захиалгыг хүлээн авлаа.</p>
+        <p id="success-copy-detail" class="success-copy"></p>
+        <p class="success-copy success-copy-last">Баярлалаа.</p>
+        <div class="success-actions">
+          <a class="success-button" href="#page">БУЦАХ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>

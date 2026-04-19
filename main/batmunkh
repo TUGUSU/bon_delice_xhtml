@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bon Délice Register</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">
+        <img src="logo.png">
+        <h1>BON DÉLICE</h1>
+    </div>
+
+    <form class="register-form">
+
+        <div class="input-group">
+            <input type="text" placeholder="Овог, Нэр">
+            <span class="icon">👤</span>
+        </div>
+
+        <div class="input-group">
+            <input type="email" placeholder="И-мэйл хаяг">
+            <span class="icon">✉️</span>
+        </div>
+
+        <div class="input-group">
+            <input type="password" placeholder="Нууц үг">
+            <span class="icon">👁</span>
+        </div>
+
+        <div class="input-group">
+            <input type="password" placeholder="Нууц үг давтах">
+            <span class="icon">👁</span>
+        </div>
+
+        <button class="register-btn">Бүртгүүлэх</button>
+
+    </form>
+
+    <p class="login-text">
+        Бүртгэлтэй хэрэглэгч? <a href="#">Нэвтрэх</a>
+    </p>
+
+</div>
+
+</body>
+</html>
