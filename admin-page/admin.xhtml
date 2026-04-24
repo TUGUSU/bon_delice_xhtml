@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="mn" lang="mn">
+  <head>
+    <title>Admin Dashboard - Yuna Style</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;family=Noto+Sans+Mongolian:wght@400;600;700&amp;display=swap" />
+    <link rel="stylesheet" type="text/css" href="admin.css" />
+
+    <style type="text/css">
+
+      .page-container { position: relative; overflow: hidden; }
+      .page { display: none; width: 100%; }
+      .page.is-active { display: block; }
+
+      @keyframes slideInRight {
+        from { opacity: 0; transform: translateX(3.5rem); }
+        to   { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes slideInLeft {
+        from { opacity: 0; transform: translateX(-3.5rem); }
+        to   { opacity: 1; transform: translateX(0); }
+      }
+      .page.anim-forward { animation: slideInRight 280ms cubic-bezier(.2,.8,.2,1) both; }
+      .page.anim-back    { animation: slideInLeft  280ms cubic-bezier(.2,.8,.2,1) both; }
+
+      #crumbLabel { font-weight: 800; color: var(--text); }
+
+      .vote-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        min-width: 3rem;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform var(--t-fast) var(--ease),
+                    background var(--t-fast) var(--ease),
+                    border-color var(--t-fast) var(--ease);
+      }
+      .vote-btn.liked    { background: rgba(60,200,120,0.18); border-color: rgba(60,200,120,0.5); }
+      .vote-btn.disliked { background: rgba(255,80,90,0.14);  border-color: rgba(255,80,90,0.4);  }
+      .vote-btn:active   { transform: scale(0.92); }
+      .vote-count        { font-weight: 800; min-width: 1rem; text-align: center; }
+
+      .user-role {
+        font-size: 0.78rem; font-weight: 700;
+        padding: 0.2rem 0.55rem;
+        border-radius: 999rem;
+        border: 1px solid var(--line);
+        background: var(--surface-2);
+        color: var(--muted);
+      }
+    </style>
+  </head>
+
+  <body>
+    <input id="themeToggle" class="theme-toggle" type="checkbox" />
+
+    <div class="app">
+
+      <div class="topbar">
+        <div class="topbar__left">
+          <div class="brandmark">
+            <span class="brandmark__dot"></span>
+            <span class="brandmark__name">Admin</span>
+          </div>
+          <div class="crumb">
+            <span>&#1053;&#1199;&#1199;&#1088;</span>
+            <span class="crumb__sep">/</span>
+            <span id="crumbLabel">Dashboard</span>
+          </div>
+        </div>
+
+        <div class="topbar__center">
+          <form class="search" action="#" method="get">
+            <input id="searchInput" class="search__input" type="text"
+              placeholder="&#1061;&#1072;&#1081;&#1093; (&#1079;&#1072;&#1093;&#1080;&#1072;&#1083;&#1075;&#1072;, &#1093;&#1101;&#1088;&#1101;&#1075;&#1083;&#1101;&#1075;&#1095;)..." />
+            <button class="search__btn" type="submit" title="Search">&#128270;</button>
+          </form>
+        </div>
+
+        <div class="topbar__right">
+          <label class="theme-btn" for="themeToggle" title="Dark/Light">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0 4a1 1 0 0 1-1-1v-1a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1Zm0-18a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1Zm10 9a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1ZM4 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm15.07 7.07a1 1 0 0 1-1.41 0l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41ZM7.46 7.46a1 1 0 0 1-1.41 0l-.71-.71A1 1 0 1 1 6.75 5.34l.71.71a1 1 0 0 1 0 1.41Zm11.61-2.12a1 1 0 0 1 0 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0ZM7.46 16.54a1 1 0 0 1 0 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0Z"/>
+            </svg>
+          </label>
+          <a class="icon-btn" href="#" title="Notifications">&#128276;</a>
+          <div class="avatar" title="Admin"><span class="avatar__txt">F</span></div>
+        </div>
+      </div>
+
+      <div class="shell">
+
+        <div class="sidebar">
+          <div class="sidebar__section">
+            <div class="sidebar__title">&#1053;&#1072;&#1074;&#1080;&#1075;&#1072;&#1094;&#1080;</div>
+
+            <a id="nav-dashboard" class="navitem active" href="#"
+               onclick="return navigate('dashboard', this)">
+              <span class="navitem__ic">&#128202;</span>
+              <span class="navitem__tx">Dashboard</span>
+            </a>
+
+            <a id="nav-reservations" class="navitem" href="#"
+               onclick="return navigate('reservations', this)">
+              <span class="navitem__ic">&#128197;</span>
+              <span class="navitem__tx">&#1047;&#1072;&#1093;&#1080;&#1072;&#1083;&#1075;&#1072;</span>
+            </a>
+
+            <a id="nav-reviews" class="navitem" href="#"
+               onclick="return navigate('reviews', this)">
+              <span class="navitem__ic">&#11088;</span>
+              <span class="navitem__tx">&#1057;&#1101;&#1090;&#1075;&#1101;&#1075;&#1076;&#1101;&#1083;</span>
+            </a>
+
+            <a id="nav-users" class="navitem" href="#"
+               onclick="return navigate('users', this)">
+              <span class="navitem__ic">&#128100;</span>
+              <span class="navitem__tx">&#1061;&#1101;&#1088;&#1101;&#1075;&#1083;&#1101;&#1075;&#1095;</span>
+            </a>
+          </div>
+
+
+          <div class="sidebar__footer">
+            <div class="mini">
+              <span class="mini__k">Online</span>
+              <span class="mini__v">12 &#1072;&#1076;&#1084;&#1080;&#1085;</span>
+            </div>
+            <div class="mini">
+              <span class="mini__k">Queue</span>
+              <span class="mini__v">3 ticket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="main page-container">
+
+
+          <div id="page-dashboard" class="page is-active anim-forward">
+            <div class="kpi">
+              <div class="card card--accent">
+                <div class="card__top"><div class="chip">&#1256;&#1085;&#1257;&#1257;&#1076;&#1101;&#1088;</div><span>&#128200;</span></div>
+                <div class="card__num">86</div>
+                <div class="card__label">&#1047;&#1072;&#1093;&#1080;&#1072;&#1083;&#1075;&#1072;</div>
+                <div class="card__hint">+12%</div>
+              </div>
+              <div class="card">
+                <div class="card__top"><div class="chip">Realtime</div><span>&#128101;</span></div>
+                <div class="card__num">1,240</div>
+                <div class="card__label">Active users</div>
+                <div class="card__hint">Peak 1,410</div>
+              </div>
+              <div class="card">
+                <div class="card__top"><div class="chip">&#1054;&#1088;&#1083;&#1086;&#1075;&#1086;</div><span>&#128176;</span></div>
+                <div class="card__num">&#8366;2.4M</div>
+                <div class="card__label">&#1256;&#1085;&#1257;&#1257;&#1076;&#1088;&#1080;&#1081;&#1085;</div>
+                <div class="card__hint">+8%</div>
+              </div>
+              <div class="card">
+                <div class="card__top"><div class="chip">&#1054;&#1085;&#1086;&#1086;</div><span>&#11088;</span></div>
+                <div class="card__num">4.8</div>
+                <div class="card__label">&#1044;&#1091;&#1085;&#1076;&#1072;&#1078; &#1086;&#1085;&#1086;&#1086;</div>
+                <div class="card__hint">128 &#1089;&#1101;&#1090;&#1075;&#1101;&#1075;&#1076;&#1101;&#1083;</div>
+              </div>
+            </div>
+
+            <div class="grid2">
+              <div class="panel">
+                <div class="panel__head">
+                  <div>
+                    <div class="panel__title">&#1057;&#1199;&#1199;&#1083;&#1080;&#1081;&#1085; &#1079;&#1072;&#1093;&#1080;&#1072;&#1083;&#1075;&#1091;&#1091;&#1076;</div>
+                    <div class="panel__sub">&#1057;&#1199;&#1199;&#1083;&#1080;&#1081;&#1085; 24 &#1094;&#1072;&#1075;&#1080;&#1081;&#1085; &#1084;&#1101;&#1076;&#1101;&#1101;&#1083;&#1101;&#1083;</div>
+                  </div>
+                  <div class="panel__actions">
+                    <a class="btn-ghost" href="#">Export</a>
+                    <a class="btn-primary" href="#">+ New</a>
+                  </div>
+                </div>
+                <div class="tablewrap">
+                  <table class="table">
+                    <thead>
+                      <tr><th>&#1050;&#1086;&#1076;</th><th>&#1053;&#1101;&#1088;</th><th>&#1062;&#1072;&#1075;</th><th>&#1061;&#1199;&#1085;</th><th>&#1058;&#1257;&#1083;&#1257;&#1074;</th></tr>
+                    </thead>
+                    <tbody id="reservationTable"></tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="panel">
+                <div class="panel__head">
+                  <div>
+                    <div class="panel__title">&#1058;&#1199;&#1088;&#1075;&#1101;&#1085; &#1090;&#1086;&#1093;&#1080;&#1088;&#1075;&#1086;&#1086;</div>
+                    <div class="panel__sub">&#1056;&#1077;&#1089;&#1090;&#1086;&#1088;&#1072;&#1085;&#1099; &#1084;&#1101;&#1076;&#1101;&#1101;&#1083;&#1101;&#1083; &#1096;&#1080;&#1085;&#1101;&#1095;&#1083;&#1101;&#1093;</div>
+                  </div>
+                </div>
+                <form class="form" action="#" method="post">
+                  <div class="form__row">
+                    <div class="field">
+                      <label for="rname">&#1053;&#1101;&#1088;</label>
+                      <input id="rname" class="input" type="text" name="rname" value="Yuna" />
+                    </div>
+                    <div class="field">
+                      <label for="rtype">&#1058;&#1257;&#1088;&#1257;&#1083;</label>
+                      <input id="rtype" class="input" type="text" name="rtype" value="&#1057;&#1086;&#1083;&#1086;&#1085;&#1075;&#1086;&#1089; / &#1040;&#1079;&#1080;" />
+                    </div>
+                  </div>
+                  <div class="form__row">
+                    <div class="field">
+                      <label for="hours">&#1062;&#1072;&#1075;&#1080;&#1081;&#1085; &#1093;&#1091;&#1074;&#1072;&#1072;&#1088;&#1100;</label>
+                      <input id="hours" class="input" type="text" name="hours" value="11:00 - 00:00" />
+                    </div>
+                    <div class="field">
+                      <label for="price">&#1059;&#1085;&#1101; (&#1090;&#1199;&#1074;&#1096;&#1080;&#1085;)</label>
+                      <select id="price" class="select" name="price">
+                        <option value="$">$</option>
+                        <option value="$$$">$$$</option>
+                        <option value="$$$$" selected="selected">$$$$</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="desc">&#1058;&#1072;&#1081;&#1083;&#1073;&#1072;&#1088;</label>
+                    <textarea id="desc" class="textarea" name="desc" rows="4" cols="40">&#1057;&#1086;&#1083;&#1086;&#1085;&#1075;&#1086;&#1089; &#1093;&#1086;&#1086;&#1083;&#1085;&#1099; &#1089;&#1199;&#1083;&#1078;&#1101;&#1101; &#1088;&#1077;&#1089;&#1090;&#1086;&#1088;&#1072;&#1085;...</textarea>
+                  </div>
+                  <div class="form__actions">
+                    <a class="btn-ghost" href="#">Reset</a>
+                    <button class="btn-primary" type="submit">&#1061;&#1072;&#1076;&#1075;&#1072;&#1083;&#1072;&#1093;</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <div class="panel__title">&#1057;&#1101;&#1090;&#1075;&#1101;&#1075;&#1076;&#1101;&#1083;</div>
+                  <div class="panel__sub">&#1057;&#1199;&#1199;&#1083;&#1080;&#1081;&#1085; &#1089;&#1101;&#1090;&#1075;&#1101;&#1075;&#1076;&#1101;&#1083;&#1199;&#1199;&#1076;</div>
+                </div>
+              </div>
+              <div class="reviewlist" id="dashboardReviews"></div>
+            </div>
+
+            <div class="footer">
+              <span>&#169; 2026 Admin Panel</span>
+              <span class="footer__muted">Yuna style UI</span>
+            </div>
+          </div>
+
+          <div id="page-reservations" class="page">
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <div class="panel__title">&#1041;&#1199;&#1093; &#1079;&#1072;&#1093;&#1080;&#1072;&#1083;&#1075;&#1091;&#1091;&#1076;</div>
+                  <div class="panel__sub">&#1047;&#1072;&#1093;&#1080;&#1072;&#1083;&#1075;&#1091;&#1091;&#1076;&#1099;&#1085; &#1073;&#1199;&#1088;&#1101;&#1085; &#1078;&#1072;&#1075;&#1089;&#1072;&#1072;&#1083;&#1090;</div>
+                </div>
+                <div class="panel__actions">
+                  <a class="btn-ghost" href="#">Export</a>
+                  <a class="btn-primary" href="#">+ New</a>
+                </div>
+              </div>
+              <div class="tablewrap">
+                <table class="table">
+                  <thead>
+                    <tr><th>&#1050;&#1086;&#1076;</th><th>&#1053;&#1101;&#1088;</th><th>&#1062;&#1072;&#1075;</th><th>&#1061;&#1199;&#1085;</th><th>&#1058;&#1257;&#1083;&#1257;&#1074;</th></tr>
+                  </thead>
+                  <tbody id="allReservationTable"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div id="page-reviews" class="page">
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <div class="panel__title">&#1041;&#1199;&#1093; &#1089;&#1101;&#1090;&#1075;&#1101;&#1075;&#1076;&#1101;&#1083;&#1199;&#1199;&#1076;</div>
+                  <div class="panel__sub">&#1061;&#1101;&#1088;&#1101;&#1075;&#1083;&#1101;&#1075;&#1095;&#1076;&#1080;&#1081;&#1085; &#1091;&#1083;&#1076;&#1101;&#1101;&#1089;&#1101;&#1085; &#1073;&#1199;&#1093; &#1089;&#1101;&#1090;&#1075;&#1101;&#1075;&#1076;&#1101;&#1083;</div>
+                </div>
+              </div>
+              <div class="reviewlist" id="allReviews"></div>
+            </div>
+          </div>
+
+          <div id="page-users" class="page">
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <div class="panel__title">&#1061;&#1101;&#1088;&#1101;&#1075;&#1083;&#1101;&#1075;&#1095;&#1080;&#1076;</div>
+                  <div class="panel__sub">&#1041;&#1199;&#1088;&#1090;&#1075;&#1101;&#1083;&#1090;&#1101;&#1081; &#1093;&#1101;&#1088;&#1101;&#1075;&#1083;&#1101;&#1075;&#1095;&#1076;&#1080;&#1081;&#1085; &#1078;&#1072;&#1075;&#1089;&#1072;&#1072;&#1083;&#1090;</div>
+                </div>
+              </div>
+              <div class="tablewrap">
+                <table class="table">
+                  <thead>
+                    <tr><th>ID</th><th>&#1053;&#1101;&#1088;</th><th>&#1048;-&#1084;&#1101;&#1081;&#1083;</th><th>&#1056;&#1086;&#1083;&#1100;</th><th>&#1041;&#1199;&#1088;&#1090;&#1075;&#1199;&#1199;&#1083;&#1089;&#1101;&#1085;</th></tr>
+                  </thead>
+                  <tbody id="usersTable"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="adminapp.js"></script>
+  </body>
+</html>
