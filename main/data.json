@@ -1,0 +1,32 @@
+{
+  "reservations": [
+    {
+      "id": "R-1042",
+      "name": "Bat-Erdene",
+      "time": "19:00",
+      "guests": 4,
+      "status": "confirmed"
+    },
+    {
+      "id": "R-1041",
+      "name": "Enkhjin",
+      "time": "18:30",
+      "guests": 2,
+      "status": "pending"
+    },
+    {
+      "id": "R-1039",
+      "name": "Temuulen",
+      "time": "20:00",
+      "guests": 6,
+      "status": "canceled"
+    },
+    {
+      "id": "R-1037",
+      "name": "Ariunaa",
+      "time": "17:30",
+      "guests": 3,
+      "status": "confirmed"
+    }
+  ]
+}

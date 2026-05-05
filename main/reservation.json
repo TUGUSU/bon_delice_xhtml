@@ -1,0 +1,37 @@
+{
+  "restaurant": {
+    "name": "Yuna",
+    "distance": "0.6 км",
+    "rating": 4.3,
+    "reviewsCount": 86,
+    "tags": ["#Солонгос ресторан", "#Ази ресторан"],
+    "address": "Royal Castle Apartment, Seoul Business Center, BZD - 1 khoroo, Ulaanbaatar 13380",
+    "description": "Yuna Restaurant бол Солонгос хоолны сүлжээ ресторан бөгөөд тус ресторан нь уламжлалт Солонгос амтыг орчин үеийн тав тухтай орчинтой хослуулан санал болгодог.",
+    "hours": "11:00 - 00:00",
+    "locationLabel": "Таны одоо байгаа байршил.",
+    "locationValue": "Bayuzurkh district, 26 street",
+    "logo": "assets/img/logo.png"
+  },
+  "gallery": [
+    {"id": 1, "type": "main", "title": "Main Hall", "count": 120, "image": "assets/img/hero-main.jpg", "thumb": "assets/img/hero-main.jpg"},
+    {"id": 2, "type": "interior", "title": "Interior", "count": 38, "image": "assets/img/interior.jpg", "thumb": "assets/img/interior.jpg"},
+    {"id": 3, "type": "food", "title": "Food", "count": 33, "image": "assets/img/food.jpg", "thumb": "assets/img/food.jpg"},
+    {"id": 4, "type": "menu", "title": "Menu", "count": 4, "image": "assets/img/menu-left.jpg", "thumb": "assets/img/menu-left.jpg"},
+    {"id": 5, "type": "menu", "title": "Menu Detail", "count": 4, "image": "assets/img/menu-right.jpg", "thumb": "assets/img/menu-right.jpg"}
+  ],
+  "tables": [
+    {"id": 1, "name": "ШИРЭЭ 1", "capacity": 2, "available": true},
+    {"id": 2, "name": "ШИРЭЭ 2", "capacity": 4, "available": true},
+    {"id": 3, "name": "ШИРЭЭ 3", "capacity": 4, "available": true},
+    {"id": 4, "name": "ШИРЭЭ 4", "capacity": 6, "available": false},
+    {"id": 5, "name": "ШИРЭЭ 5", "capacity": 2, "available": true}
+  ],
+  "times": ["11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "18:00 - 19:00", "19:00 - 20:00"],
+  "days": [
+    {"date": 1, "dayName": "Даваа"}, {"date": 2, "dayName": "Мягмар"}, {"date": 3, "dayName": "Лхагва"}, {"date": 4, "dayName": "Пүрэв"}, {"date": 5, "dayName": "Баасан"}, {"date": 6, "dayName": "Бямба"}, {"date": 7, "dayName": "Ням"},
+    {"date": 8, "dayName": "Даваа"}, {"date": 9, "dayName": "Мягмар"}, {"date": 10, "dayName": "Лхагва"}, {"date": 11, "dayName": "Пүрэв"}, {"date": 12, "dayName": "Баасан"}, {"date": 13, "dayName": "Бямба"}, {"date": 14, "dayName": "Ням"},
+    {"date": 15, "dayName": "Даваа"}, {"date": 16, "dayName": "Мягмар"}, {"date": 17, "dayName": "Лхагва"}, {"date": 18, "dayName": "Пүрэв"}, {"date": 19, "dayName": "Баасан"}, {"date": 20, "dayName": "Бямба"}, {"date": 21, "dayName": "Ням"},
+    {"date": 22, "dayName": "Даваа"}, {"date": 23, "dayName": "Мягмар"}, {"date": 24, "dayName": "Лхагва"}, {"date": 25, "dayName": "Пүрэв"}, {"date": 26, "dayName": "Баасан"}, {"date": 27, "dayName": "Бямба"}, {"date": 28, "dayName": "Ням"},
+    {"date": 29, "dayName": "Даваа"}, {"date": 30, "dayName": "Мягмар"}, {"date": 31, "dayName": "Лхагва"}
+  ]
+}
